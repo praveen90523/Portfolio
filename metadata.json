@@ -1,0 +1,6 @@
+{
+  "name": "Praveen Portfolio",
+  "description": "Premium modern developer portfolio website for Praveen, a Full Stack MERN Developer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

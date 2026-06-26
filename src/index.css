@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Premium Customizations */
+
+/* Sleek custom scrollbars with wine theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #130307;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #faf5f7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3a111a;
+  border-radius: 6px;
+  border: 2px solid #130307;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #e9cbd1;
+  border: 2px solid #faf5f7;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f43f5e;
+}
+
+/* Text Selection Highlights */
+::selection {
+  background-color: rgba(244, 63, 94, 0.4);
+  color: #ffffff;
+}
+
+.light ::selection {
+  background-color: rgba(244, 63, 94, 0.25);
+  color: #000000;
+}
+
+/* Glassmorphism utility classes matching the burgundy screenshots */
+.glass-panel {
+  background: rgba(26, 7, 12, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.15);
+  box-shadow: 0 0 25px rgba(244, 63, 94, 0.08);
+}
+
+.light .glass-panel {
+  background: rgba(255, 248, 249, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 63, 94, 0.12);
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.04);
+}
+
+.glass-nav {
+  background: rgba(20, 5, 9, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.15);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+.light .glass-nav {
+  background: rgba(255, 250, 251, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(244, 63, 94, 0.1);
+  box-shadow: 0 4px 20px rgba(244, 63, 94, 0.03);
+}
+
+/* Glowing text and element effects */
+.glow-text-rose {
+  text-shadow: 0 0 15px rgba(244, 63, 94, 0.6), 0 0 3px rgba(244, 63, 94, 0.3);
+}
+
+.glow-rose-sm {
+  box-shadow: 0 0 12px rgba(244, 63, 94, 0.2);
+}
+
+.glow-rose-md {
+  box-shadow: 0 0 22px rgba(244, 63, 94, 0.35);
+}
+
+.glow-rose-lg {
+  box-shadow: 0 0 40px rgba(244, 63, 94, 0.5);
+}
+
+/* Grid overlay background matching red aesthetics */
+.grid-bg {
+  background-image: radial-gradient(rgba(244, 63, 94, 0.06) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.light .grid-bg {
+  background-image: radial-gradient(rgba(244, 63, 94, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Animated radial ambient lights matching screenshots */
+.ambient-glow-rose {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.16) 0%, transparent 70%);
+}
+
+.ambient-glow-wine {
+  background: radial-gradient(circle, rgba(144, 30, 54, 0.18) 0%, transparent 70%);
+}
+
+.light .ambient-glow-rose {
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.06) 0%, transparent 70%);
+}
+
+.light .ambient-glow-wine {
+  background: radial-gradient(circle, rgba(144, 30, 54, 0.05) 0%, transparent 70%);
+}
+
+/* CSS Keyframes for orbiting elements in screenshot 3 */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(85px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(85px) rotate(-360deg);
+  }
+}
+
+@keyframes orbit-slow {
+  from {
+    transform: rotate(360deg) translateX(110px) rotate(-360deg);
+  }
+  to {
+    transform: rotate(0deg) translateX(110px) rotate(0deg);
+  }
+}
+
+.orbit-item-1 {
+  animation: orbit 16s linear infinite;
+}
+
+.orbit-item-2 {
+  animation: orbit 16s linear infinite;
+  animation-delay: -4s;
+}
+
+.orbit-item-3 {
+  animation: orbit 16s linear infinite;
+  animation-delay: -8s;
+}
+
+.orbit-item-4 {
+  animation: orbit 16s linear infinite;
+  animation-delay: -12s;
+}
+
+.orbit-item-slow-1 {
+  animation: orbit-slow 24s linear infinite;
+}
+
+.orbit-item-slow-2 {
+  animation: orbit-slow 24s linear infinite;
+  animation-delay: -12s;
+}

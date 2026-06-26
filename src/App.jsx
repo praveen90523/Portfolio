@@ -1,17 +1,17 @@
-import { ThemeProvider } from './components/ThemeContext';
-import BackgroundEffects from './components/BackgroundEffects';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Skills from './components/Skills';
-import ArchitectureBlueprint from './components/ArchitectureBlueprint';
-import Projects from './components/Projects';
-import Timeline from './components/Timeline';
-import EducationCertificates from './components/EducationCertificates';
-import Services from './components/Services';
-import GitHubSection from './components/GitHubSection';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import { ThemeProvider } from "./components/ThemeContext";
+import BackgroundEffects from "./components/BackgroundEffects";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
+import ArchitectureBlueprint from "./components/ArchitectureBlueprint";
+import Projects from "./components/Projects";
+import Timeline from "./components/Timeline";
+import EducationCertificates from "./components/EducationCertificates";
+import Services from "./components/Services";
+import GitHubSection from "./components/GitHubSection";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (

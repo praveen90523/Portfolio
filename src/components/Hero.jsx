@@ -1,16 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'motion/react';
-import { MapPin, Calendar, ArrowRight, Download, Github, Linkedin, Database, Server, Cpu, Layers, Activity, Sparkles } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
+import {
+  MapPin,
+  Calendar,
+  ArrowRight,
+  Download,
+  Github,
+  Linkedin,
+  Database,
+  Server,
+  Cpu,
+  Layers,
+  Activity,
+} from "lucide-react";
+import { personalInfo } from "../data/portfolioData";
 
-const LeetCode = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    role="img"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    {...props}
-  >
-    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z"/>
+const LeetCode = (props) => (
+  <svg role="img" viewBox="0 0 24 24" fill="currentColor" {...props}>
+    <path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.396-2.392c.54-.54.54-1.414.003-1.955a1.378 1.378 0 0 0-1.951-.003l-2.396 2.392a3.021 3.021 0 0 1-4.205.038l-.02-.019-4.276-4.193c-.652-.64-.972-1.469-.948-2.263a2.68 2.68 0 0 1 .066-.523 2.545 2.545 0 0 1 .619-1.164L9.13 8.114c1.058-1.134 3.204-1.27 4.43-.278l3.501 2.831c.593.48 1.461.387 1.94-.207a1.384 1.384 0 0 0-.207-1.943l-3.5-2.831c-.8-.647-1.766-1.045-2.774-1.202l2.015-2.158A1.384 1.384 0 0 0 13.483 0zm-2.866 12.815a1.38 1.38 0 0 0-1.38 1.382 1.38 1.38 0 0 0 1.38 1.382H20.79a1.38 1.38 0 0 0 1.38-1.382 1.38 1.38 0 0 0-1.38-1.382z" />
   </svg>
 );
 
@@ -19,21 +26,21 @@ export default function Hero() {
 
   // Track mouse movement for subtle parallax floating glow
   useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
+    const handleMouseMove = (e) => {
       const { clientX, clientY } = e;
       const x = (clientX / window.innerWidth - 0.5) * 20;
       const y = (clientY / window.innerHeight - 0.5) * 20;
       setMousePos({ x, y });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
-  const handleScrollTo = (sectionId: string) => {
+  const handleScrollTo = (sectionId) => {
     const el = document.getElementById(sectionId);
     if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
+      el.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -44,7 +51,6 @@ export default function Hero() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
           {/* Hero Left: Classic Elegant Greetings (Screenshot 2) */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -60,9 +66,9 @@ export default function Hero() {
 
             {/* Main Greeting Title */}
             <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-              Hi, I'm{' '}
+              Hi, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold relative inline-block">
-                {personalInfo.fullName.split(' ')[0]}
+                {personalInfo.fullName.split(" ")[0]}
                 <span className="absolute bottom-1 left-0 w-full h-[4px] bg-rose-500/20 rounded-full" />
               </span>
             </h1>
@@ -74,9 +80,10 @@ export default function Hero() {
 
             {/* Clean Short Description */}
             <p className="text-sm sm:text-base text-rose-100/70 max-w-xl leading-relaxed">
-              I build modern, scalable, and ultra-responsive web experiences. 
-              By merging robust backend services with polished, pixel-precise frontend interfaces, 
-              I bring ideas to life with flawless execution.
+              I build modern, scalable, and ultra-responsive web experiences. By
+              merging robust backend services with polished, pixel-precise
+              frontend interfaces, I bring ideas to life with flawless
+              execution.
             </p>
 
             {/* Quick Info Badges */}
@@ -94,7 +101,7 @@ export default function Hero() {
             {/* Premium Theme Action Buttons */}
             <div className="flex flex-wrap gap-4 pt-2 w-full sm:w-auto">
               <button
-                onClick={() => handleScrollTo('contact')}
+                onClick={() => handleScrollTo("contact")}
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-rose-600 to-pink-500 hover:from-rose-500 hover:to-pink-600 text-white font-sans font-bold text-xs uppercase tracking-wider shadow-[0_0_20px_rgba(244,63,94,0.45)] hover:shadow-[0_0_30px_rgba(244,63,94,0.6)] hover:-translate-y-0.5 transition-all duration-300 cursor-pointer"
               >
                 <span>Hire Me</span>
@@ -103,7 +110,7 @@ export default function Hero() {
 
               <a
                 href={personalInfo.resumeUrl}
-                target={personalInfo.resumeUrl !== '#' ? '_blank' : undefined}
+                target={personalInfo.resumeUrl !== "#" ? "_blank" : undefined}
                 rel="noreferrer"
                 className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-rose-500/30 hover:border-rose-400 text-rose-300 hover:text-white bg-[#15050a]/40 hover:bg-rose-500/5 font-sans font-bold text-xs uppercase tracking-wider hover:-translate-y-0.5 transition-all duration-300"
               >
@@ -138,17 +145,16 @@ export default function Hero() {
                 })}
               </div>
             </div>
-
           </motion.div>
 
           {/* Hero Right: Interactive "Welcome to My Portfolio" Orbit Console Widget (Screenshot 3) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: 'easeOut' }}
+            transition={{ duration: 1, ease: "easeOut" }}
             style={{
               transform: `perspective(1000px) rotateX(${mousePos.y * 0.1}deg) rotateY(${mousePos.x * 0.1}deg)`,
-              transition: 'transform 0.15s ease-out',
+              transition: "transform 0.15s ease-out",
             }}
             className="lg:col-span-6 relative w-full flex justify-center lg:justify-end mt-12 lg:mt-0"
           >
@@ -157,7 +163,6 @@ export default function Hero() {
 
             {/* Core Card Container */}
             <div className="w-full max-w-lg rounded-3xl bg-[#1d0a11]/90 border border-rose-500/20 p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between">
-              
               {/* Header Status Badges */}
               <div className="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-rose-500/10">
                 <div className="flex items-center gap-2">
@@ -176,7 +181,6 @@ export default function Hero() {
 
               {/* Main Section Content & Orbit Wheel Side-by-Side/Stack */}
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center py-6">
-                
                 {/* Left Mini Bio / Text */}
                 <div className="md:col-span-6 space-y-4">
                   <div className="text-xs font-mono text-rose-400/80 uppercase tracking-widest font-bold">
@@ -186,18 +190,19 @@ export default function Hero() {
                     Welcome to my Portfolio Website
                   </h3>
                   <p className="text-xs text-rose-100/50 leading-relaxed">
-                    Building responsive, reliable, and fast digital experiences with a focus on clean modular UI and solid backends.
+                    Building responsive, reliable, and fast digital experiences
+                    with a focus on clean modular UI and solid backends.
                   </p>
 
                   <div className="flex gap-2.5 pt-2">
-                    <button 
-                      onClick={() => handleScrollTo('projects')}
+                    <button
+                      onClick={() => handleScrollTo("projects")}
                       className="bg-[#250a14] hover:bg-[#350f1d] text-[10px] font-mono font-bold uppercase text-white px-3 py-1.5 rounded-full border border-rose-500/15 flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>CODE</span>
                     </button>
-                    <button 
-                      onClick={() => handleScrollTo('about')}
+                    <button
+                      onClick={() => handleScrollTo("about")}
                       className="bg-[#250a14] hover:bg-[#350f1d] text-[10px] font-mono font-bold uppercase text-white px-3 py-1.5 rounded-full border border-rose-500/15 flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>PROFILE</span>
@@ -218,7 +223,6 @@ export default function Hero() {
 
                   {/* Outer Orbital Rotating Orbit Track Circle */}
                   <div className="w-44 h-44 rounded-full border border-rose-500/10 flex items-center justify-center relative">
-                    
                     {/* Orbit Item 1: MongoDB Node */}
                     <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-1 shadow-md">
                       <Database className="w-3.5 h-3.5" />
@@ -238,16 +242,16 @@ export default function Hero() {
                     <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-4 shadow-md">
                       <Cpu className="w-3.5 h-3.5" />
                     </div>
-
                   </div>
                 </div>
-
               </div>
 
               {/* Bottom Real-time Telemetry Stats (Screenshot 3) */}
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-rose-500/10">
                 <div className="bg-[#17050b]/80 p-3 rounded-2xl border border-rose-500/10">
-                  <div className="text-[15px] font-bold text-white font-mono leading-none">06</div>
+                  <div className="text-[15px] font-bold text-white font-mono leading-none">
+                    06
+                  </div>
                   <div className="text-[9px] font-mono text-rose-400/60 uppercase tracking-wider mt-1">
                     Modules Loaded
                   </div>
@@ -262,24 +266,22 @@ export default function Hero() {
                   </div>
                 </div>
               </div>
-
             </div>
           </motion.div>
-
         </div>
       </div>
 
       {/* Down Scroll Arrow */}
-      <div 
-        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 z-10 cursor-pointer" 
-        onClick={() => handleScrollTo('about')}
+      <div
+        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-1 z-10 cursor-pointer"
+        onClick={() => handleScrollTo("about")}
       >
         <span className="text-[9px] font-mono font-bold tracking-widest text-rose-400/60 uppercase">
           Scroll Down
         </span>
         <motion.div
           animate={{ y: [0, 6, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           className="w-5 h-8 border-2 border-rose-500/30 rounded-full flex justify-center p-1"
         >
           <div className="w-1.5 h-1.5 bg-rose-500 rounded-full" />

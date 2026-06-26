@@ -1,7 +1,14 @@
-import { useState } from 'react';
-import { motion } from 'motion/react';
-import { Github, Star, GitFork, BookOpen, Users, Terminal, Award, Eye, Calendar } from 'lucide-react';
-import { personalInfo } from '../data/portfolioData';
+import { useState } from "react";
+import { motion } from "motion/react";
+import {
+  Github,
+  Star,
+  GitFork,
+  BookOpen,
+  Users,
+  Terminal,
+  Calendar,
+} from "lucide-react";
 
 // Generates fake but extremely realistic contribution grid colors
 const contributionWeeks = 24; // ~6 months
@@ -37,19 +44,37 @@ const generateGridData = () => {
 const gridData = generateGridData();
 
 export default function GitHubSection() {
-  const [hoveredTile, setHoveredTile] = useState<{ week: number; day: number; count: number } | null>(null);
+  const [hoveredTile, setHoveredTile] = useState(null);
 
   const repos = [
-    { name: 'praveen-events', desc: 'Modern event ticketing, booking and admin system in MERN Stack.', stars: 12, forks: 4, lang: 'TypeScript' },
-    { name: 'praveen-stores', desc: 'Full e-commerce layout with cart mechanics, product filters and CMS dashboards.', stars: 18, forks: 6, lang: 'JavaScript' },
-    { name: 'praveen-tech', desc: 'Praveen Tech is a MERN stack web application built to showcase technology services and software solutions.', stars: 10, forks: 2, lang: 'React' },
+    {
+      name: "praveen-events",
+      desc: "Modern event ticketing, booking and admin system in MERN Stack.",
+      stars: 12,
+      forks: 4,
+      lang: "TypeScript",
+    },
+    {
+      name: "praveen-stores",
+      desc: "Full e-commerce layout with cart mechanics, product filters and CMS dashboards.",
+      stars: 18,
+      forks: 6,
+      lang: "JavaScript",
+    },
+    {
+      name: "praveen-tech",
+      desc: "Praveen Tech is a MERN stack web application built to showcase technology services and software solutions.",
+      stars: 10,
+      forks: 2,
+      lang: "React",
+    },
   ];
 
   const topLanguages = [
-    { name: 'JavaScript', percentage: 48, color: '#F7DF1E' },
-    { name: 'React (JSX)', percentage: 32, color: '#61DAFB' },
-    { name: 'HTML & CSS', percentage: 12, color: '#E34F26' },
-    { name: 'Node / Express', percentage: 8, color: '#339933' },
+    { name: "JavaScript", percentage: 48, color: "#F7DF1E" },
+    { name: "React (JSX)", percentage: 32, color: "#61DAFB" },
+    { name: "HTML & CSS", percentage: 12, color: "#E34F26" },
+    { name: "Node / Express", percentage: 8, color: "#339933" },
   ];
 
   return (
@@ -58,7 +83,6 @@ export default function GitHubSection() {
       className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
         {/* Section Title */}
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -71,7 +95,7 @@ export default function GitHubSection() {
           </motion.div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            GitHub{' '}
+            GitHub{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Contributions
             </span>
@@ -85,10 +109,10 @@ export default function GitHubSection() {
         {/* GitHub Top Stats Row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 text-left">
           {[
-            { icon: BookOpen, label: 'Repositories', val: '25+' },
-            { icon: Star, label: 'Stars Earned', val: '45+' },
-            { icon: GitFork, label: 'Total Forks', val: '14+' },
-            { icon: Users, label: 'Followers', val: '50+' },
+            { icon: BookOpen, label: "Repositories", val: "25+" },
+            { icon: Star, label: "Stars Earned", val: "45+" },
+            { icon: GitFork, label: "Total Forks", val: "14+" },
+            { icon: Users, label: "Followers", val: "50+" },
           ].map((stat, sIdx) => {
             const Icon = stat.icon;
             return (
@@ -118,7 +142,6 @@ export default function GitHubSection() {
 
         {/* Split Grid: Contribution Graph & Top Languages */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
           {/* Left Column: Contribution Grid (cols 8) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -128,7 +151,8 @@ export default function GitHubSection() {
           >
             <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
               <h3 className="font-sans font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2">
-                <Calendar className="w-5 h-5 text-rose-500" /> Contribution Heatmap
+                <Calendar className="w-5 h-5 text-rose-500" /> Contribution
+                Heatmap
               </h3>
               <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
                 <span>1,248 commits</span>
@@ -144,18 +168,28 @@ export default function GitHubSection() {
                   <div key={wIdx} className="flex flex-col gap-[3.5px]">
                     {week.map((level, dIdx) => {
                       // Map level to slate/rose colors
-                      let bgClass = 'bg-slate-200 dark:bg-[#1a050d] border border-rose-500/5'; // level 0
-                      if (level === 1) bgClass = 'bg-rose-500/20';
-                      if (level === 2) bgClass = 'bg-rose-500/40';
-                      if (level === 3) bgClass = 'bg-rose-500/70';
-                      if (level === 4) bgClass = 'bg-rose-500';
+                      let bgClass =
+                        "bg-slate-200 dark:bg-[#1a050d] border border-rose-500/5"; // level 0
+                      if (level === 1) bgClass = "bg-rose-500/20";
+                      if (level === 2) bgClass = "bg-rose-500/40";
+                      if (level === 3) bgClass = "bg-rose-500/70";
+                      if (level === 4) bgClass = "bg-rose-500";
 
-                      const totalCommits = level === 0 ? 0 : level * 2 + Math.floor(Math.random() * 3);
+                      const totalCommits =
+                        level === 0
+                          ? 0
+                          : level * 2 + Math.floor(Math.random() * 3);
 
                       return (
                         <div
                           key={dIdx}
-                          onMouseEnter={() => setHoveredTile({ week: wIdx, day: dIdx, count: totalCommits })}
+                          onMouseEnter={() =>
+                            setHoveredTile({
+                              week: wIdx,
+                              day: dIdx,
+                              count: totalCommits,
+                            })
+                          }
                           onMouseLeave={() => setHoveredTile(null)}
                           className={`w-[13px] h-[13px] rounded-[2px] transition-all hover:scale-115 hover:ring-2 hover:ring-rose-500/40 cursor-pointer ${bgClass}`}
                         />
@@ -182,8 +216,7 @@ export default function GitHubSection() {
               <div className="min-h-[16px] text-rose-400 font-bold">
                 {hoveredTile
                   ? `${hoveredTile.count} commits on day ${hoveredTile.day + 1} of week ${hoveredTile.week + 1}`
-                  : 'Hover over tiles for detail'
-                }
+                  : "Hover over tiles for detail"}
               </div>
             </div>
 
@@ -194,7 +227,10 @@ export default function GitHubSection() {
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {repos.map((rp, rIdx) => (
-                  <div key={rIdx} className="p-4 rounded-xl border border-slate-200/60 dark:border-rose-500/10 bg-slate-900/10 dark:bg-[#1c050d]/40 flex flex-col justify-between group hover:border-rose-500/20 transition-colors duration-300">
+                  <div
+                    key={rIdx}
+                    className="p-4 rounded-xl border border-slate-200/60 dark:border-rose-500/10 bg-slate-900/10 dark:bg-[#1c050d]/40 flex flex-col justify-between group hover:border-rose-500/20 transition-colors duration-300"
+                  >
                     <div>
                       <span className="font-sans font-extrabold text-sm text-slate-900 dark:text-white group-hover:text-rose-400 transition-colors">
                         {rp.name}
@@ -205,17 +241,18 @@ export default function GitHubSection() {
                     </div>
                     <div className="flex items-center justify-between text-[10px] font-mono mt-4 text-slate-400">
                       <span className="flex items-center gap-1">
-                        <span className="w-2 h-2 rounded-full bg-rose-500" /> {rp.lang}
+                        <span className="w-2 h-2 rounded-full bg-rose-500" />{" "}
+                        {rp.lang}
                       </span>
                       <span className="flex items-center gap-1">
-                        <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" /> {rp.stars}
+                        <Star className="w-3.5 h-3.5 text-amber-500 fill-amber-500" />{" "}
+                        {rp.stars}
                       </span>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-
           </motion.div>
 
           {/* Right Column: Top Languages pie/progress representations (cols 4) */}
@@ -233,23 +270,62 @@ export default function GitHubSection() {
             <div className="flex justify-center mb-8 relative">
               <svg className="w-32 h-32 transform -rotate-90">
                 {/* Simulated circle slices */}
-                <circle cx="64" cy="64" r="50" stroke="#0f172a" strokeWidth="12" fill="transparent" />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="50"
+                  stroke="#0f172a"
+                  strokeWidth="12"
+                  fill="transparent"
+                />
 
                 {/* JavaScript Arc 48% (circumference ~ 314, stroke-dasharray = % * 314) */}
-                <circle cx="64" cy="64" r="50" stroke="#F7DF1E" strokeWidth="12" fill="transparent"
-                  strokeDasharray="150 314" strokeDashoffset="0" />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="50"
+                  stroke="#F7DF1E"
+                  strokeWidth="12"
+                  fill="transparent"
+                  strokeDasharray="150 314"
+                  strokeDashoffset="0"
+                />
 
                 {/* React Arc 32% (starts at 150 offset) */}
-                <circle cx="64" cy="64" r="50" stroke="#61DAFB" strokeWidth="12" fill="transparent"
-                  strokeDasharray="100 314" strokeDashoffset="-150" />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="50"
+                  stroke="#61DAFB"
+                  strokeWidth="12"
+                  fill="transparent"
+                  strokeDasharray="100 314"
+                  strokeDashoffset="-150"
+                />
 
                 {/* CSS Arc 12% */}
-                <circle cx="64" cy="64" r="50" stroke="#E34F26" strokeWidth="12" fill="transparent"
-                  strokeDasharray="38 314" strokeDashoffset="-250" />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="50"
+                  stroke="#E34F26"
+                  strokeWidth="12"
+                  fill="transparent"
+                  strokeDasharray="38 314"
+                  strokeDashoffset="-250"
+                />
 
                 {/* Node Arc 8% */}
-                <circle cx="64" cy="64" r="50" stroke="#339933" strokeWidth="12" fill="transparent"
-                  strokeDasharray="26 314" strokeDashoffset="-288" />
+                <circle
+                  cx="64"
+                  cy="64"
+                  r="50"
+                  stroke="#339933"
+                  strokeWidth="12"
+                  fill="transparent"
+                  strokeDasharray="26 314"
+                  strokeDashoffset="-288"
+                />
               </svg>
 
               {/* Central brand symbol */}
@@ -264,7 +340,10 @@ export default function GitHubSection() {
                 <div key={lIdx} className="space-y-1">
                   <div className="flex items-center justify-between text-xs font-mono">
                     <span className="flex items-center gap-1.5 text-slate-800 dark:text-slate-200">
-                      <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: lang.color }} />
+                      <span
+                        className="w-2.5 h-2.5 rounded-full"
+                        style={{ backgroundColor: lang.color }}
+                      />
                       {lang.name}
                     </span>
                     <span className="text-slate-400 dark:text-slate-500 font-bold">
@@ -272,7 +351,13 @@ export default function GitHubSection() {
                     </span>
                   </div>
                   <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                    <div className="h-full rounded-full" style={{ backgroundColor: lang.color, width: `${lang.percentage}%` }} />
+                    <div
+                      className="h-full rounded-full"
+                      style={{
+                        backgroundColor: lang.color,
+                        width: `${lang.percentage}%`,
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -280,13 +365,12 @@ export default function GitHubSection() {
 
             {/* Footer card metrics details */}
             <div className="mt-8 p-3 bg-slate-900/10 dark:bg-slate-900/30 rounded-xl border border-slate-200/40 dark:border-rose-500/10 text-xs text-slate-600 dark:text-rose-300/60 text-center">
-              "Total Git commits verified this year: <span className="text-rose-400 font-extrabold">1,248</span> across multiple production systems."
+              "Total Git commits verified this year:{" "}
+              <span className="text-rose-400 font-extrabold">1,248</span> across
+              multiple production systems."
             </div>
-
           </motion.div>
-
         </div>
-
       </div>
     </section>
   );

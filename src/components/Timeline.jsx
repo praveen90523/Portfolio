@@ -1,6 +1,6 @@
-import { motion } from 'motion/react';
-import { Calendar, CheckCircle2, CircleDot, Milestone } from 'lucide-react';
-import { timeline } from '../data/portfolioData';
+import { motion } from "motion/react";
+import { CheckCircle2, CircleDot, Milestone } from "lucide-react";
+import { timeline } from "../data/portfolioData";
 
 export default function Timeline() {
   return (
@@ -9,7 +9,6 @@ export default function Timeline() {
       className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Heading */}
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -18,11 +17,12 @@ export default function Timeline() {
             viewport={{ once: true }}
             className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-mono font-bold tracking-wider uppercase mb-3"
           >
-            <Milestone className="w-3.5 h-3.5 text-rose-500" /> Developmental Path
+            <Milestone className="w-3.5 h-3.5 text-rose-500" /> Developmental
+            Path
           </motion.div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Learning{' '}
+            Learning{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Timeline
             </span>
@@ -35,16 +35,14 @@ export default function Timeline() {
 
         {/* Vertical Timeline Track */}
         <div className="relative border-l-2 border-slate-200 dark:border-rose-950/40 ml-4 sm:ml-32 pl-8 sm:pl-10 space-y-12">
-          
           {timeline.map((event, idx) => {
-            const isActive = event.status === 'active';
-            
+            const isActive = event.status === "active";
             return (
               <motion.div
                 key={event.id}
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true, margin: '-50px' }}
+                viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
                 className="relative group text-left"
               >
@@ -63,23 +61,28 @@ export default function Timeline() {
 
                 {/* Left Side Label (Desktop Only) */}
                 <div className="hidden sm:block absolute -left-[180px] top-1 text-right w-[140px]">
-                  <span className={`text-[10px] font-mono font-bold uppercase tracking-wider ${
-                    isActive ? 'text-rose-400' : 'text-slate-400 dark:text-slate-500'
-                  }`}>
+                  <span
+                    className={`text-[10px] font-mono font-bold uppercase tracking-wider ${
+                      isActive
+                        ? "text-rose-400"
+                        : "text-slate-400 dark:text-slate-500"
+                    }`}
+                  >
                     Step 0{idx + 1}
                   </span>
                   <div className="text-[11px] font-mono font-medium text-slate-500 mt-0.5">
-                    {isActive ? 'Ongoing Focus' : 'Acquired'}
+                    {isActive ? "Ongoing Focus" : "Acquired"}
                   </div>
                 </div>
 
                 {/* Timeline content Card */}
-                <div className={`p-6 rounded-2xl glass-panel border shadow-sm group-hover:border-rose-500/25 transition-all duration-300 relative ${
-                  isActive 
-                    ? 'border-rose-500/20 bg-rose-500/[0.02] ring-1 ring-rose-500/10' 
-                    : 'border-slate-200/50 dark:border-rose-500/15'
-                }`}>
-                  
+                <div
+                  className={`p-6 rounded-2xl glass-panel border shadow-sm group-hover:border-rose-500/25 transition-all duration-300 relative ${
+                    isActive
+                      ? "border-rose-500/20 bg-rose-500/[0.02] ring-1 ring-rose-500/10"
+                      : "border-slate-200/50 dark:border-rose-500/15"
+                  }`}
+                >
                   {/* Card corner light */}
                   {isActive && (
                     <div className="absolute top-0 right-0 w-16 h-16 bg-radial-gradient from-rose-500/10 to-transparent pointer-events-none rounded-tr-2xl" />
@@ -89,13 +92,15 @@ export default function Timeline() {
                     <h3 className="font-sans font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-rose-400 transition-colors">
                       {event.title}
                     </h3>
-                    
+
                     {/* Status badge */}
-                    <span className={`px-2 py-0.5 rounded-md text-[9px] font-mono font-bold tracking-wider uppercase border shrink-0 ${
-                      isActive 
-                        ? 'bg-rose-500/10 border-rose-500/20 text-rose-400' 
-                        : 'bg-emerald-500/10 border-emerald-500/20 text-emerald-500'
-                    }`}>
+                    <span
+                      className={`px-2 py-0.5 rounded-md text-[9px] font-mono font-bold tracking-wider uppercase border shrink-0 ${
+                        isActive
+                          ? "bg-rose-500/10 border-rose-500/20 text-rose-400"
+                          : "bg-emerald-500/10 border-emerald-500/20 text-emerald-500"
+                      }`}
+                    >
                       {event.status}
                     </span>
                   </div>
@@ -103,15 +108,11 @@ export default function Timeline() {
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-rose-100/70 mt-2 leading-relaxed">
                     {event.description}
                   </p>
-
                 </div>
-
               </motion.div>
             );
           })}
-
         </div>
-
       </div>
     </section>
   );

@@ -1,31 +1,30 @@
-import { useState } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
-import { Layers, Server, Database, ShieldCheck, CheckCircle2, ChevronRight, Terminal, Code2 } from 'lucide-react';
+import { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import {
+  Layers,
+  Server,
+  Database,
+  ShieldCheck,
+  CheckCircle2,
+  ChevronRight,
+  Terminal,
+  Code2,
+} from "lucide-react";
 
-interface BlueprintLayer {
-  id: string;
-  title: string;
-  role: string;
-  tech: string;
-  description: string;
-  icon: any;
-  principles: string[];
-  codeSnippet: string;
-}
-
-const blueprintLayers: BlueprintLayer[] = [
+const blueprintLayers = [
   {
-    id: 'frontend',
-    title: '1. UI/UX & Responsive Client Layer',
-    role: 'Presentation & Interaction',
-    tech: 'React 18+, Vite, Tailwind CSS, Motion',
+    id: "frontend",
+    title: "1. UI/UX & Responsive Client Layer",
+    role: "Presentation & Interaction",
+    tech: "React 18+, Vite, Tailwind CSS, Motion",
     icon: Layers,
-    description: 'Developing declarative, high-fidelity user interfaces designed with strict desktop-first precision and mobile-first code. I focus on modular component decoupling, optimized render cycle stability, and beautiful fluid animations.',
+    description:
+      "Developing declarative, high-fidelity user interfaces designed with strict desktop-first precision and mobile-first code. I focus on modular component decoupling, optimized render cycle stability, and beautiful fluid animations.",
     principles: [
-      'Declarative state management via lightweight custom hooks.',
-      'Rigorous elimination of redundant render triggers and effect cycles.',
-      'Responsive design driven purely by Tailwind utility systems.',
-      'Semantic HTML with complete accessibility compliance.'
+      "Declarative state management via lightweight custom hooks.",
+      "Rigorous elimination of redundant render triggers and effect cycles.",
+      "Responsive design driven purely by Tailwind utility systems.",
+      "Semantic HTML with complete accessibility compliance.",
     ],
     codeSnippet: `// Standard Optimized Container Pattern
 export function ProjectCard({ project }: ProjectCardProps) {
@@ -48,20 +47,21 @@ export function ProjectCard({ project }: ProjectCardProps) {
       </div>
     </article>
   );
-}`
+}`,
   },
   {
-    id: 'security',
-    title: '2. Middleware & Security Gateway',
-    role: 'Protection & Authentication',
-    tech: 'JWT, CORS policies, Helmet, express-rate-limit',
+    id: "security",
+    title: "2. Middleware & Security Gateway",
+    role: "Protection & Authentication",
+    tech: "JWT, CORS policies, Helmet, express-rate-limit",
     icon: ShieldCheck,
-    description: 'Establishing robust client-to-server security borders. I implement request speed constraints, cryptographic authentication schemes, token validation layers, and sanitization of incoming client payloads.',
+    description:
+      "Establishing robust client-to-server security borders. I implement request speed constraints, cryptographic authentication schemes, token validation layers, and sanitization of incoming client payloads.",
     principles: [
-      'Cryptographic JWT authorization with secure signature validation.',
-      'Granular API Rate Limiting to prevent denial-of-service attempts.',
-      'Strict HTTP Header headers via Express Helmet integration.',
-      'Input sanitation utilizing certified schemas to avoid injections.'
+      "Cryptographic JWT authorization with secure signature validation.",
+      "Granular API Rate Limiting to prevent denial-of-service attempts.",
+      "Strict HTTP Header headers via Express Helmet integration.",
+      "Input sanitation utilizing certified schemas to avoid injections.",
     ],
     codeSnippet: `// Custom JWT Security Authenticator
 import jwt from 'jsonwebtoken';
@@ -81,20 +81,21 @@ export const authenticateToken = (req, res, next) => {
     req.user = user;
     next();
   });
-};`
+};`,
   },
   {
-    id: 'routing',
-    title: '3. API Routing & Controller Engine',
-    role: 'Orchestration & Business Logic',
-    tech: 'Express.js, REST Architecture, Async Controllers',
+    id: "routing",
+    title: "3. API Routing & Controller Engine",
+    role: "Orchestration & Business Logic",
+    tech: "Express.js, REST Architecture, Async Controllers",
     icon: Server,
-    description: 'Providing structural routes for client-server payloads. I write clean, fully asynchronous endpoint controllers using centralized try/catch middleware mechanisms and strictly standardized JSON payload templates.',
+    description:
+      "Providing structural routes for client-server payloads. I write clean, fully asynchronous endpoint controllers using centralized try/catch middleware mechanisms and strictly standardized JSON payload templates.",
     principles: [
-      'Adherence to standard RESTful resource endpoint naming schemas.',
-      'Centralized async controller routing via wrapper middleware.',
-      'Rigorous enforcement of HTTP-compliant response codes.',
-      'Modular separation of schema routers and controller modules.'
+      "Adherence to standard RESTful resource endpoint naming schemas.",
+      "Centralized async controller routing via wrapper middleware.",
+      "Rigorous enforcement of HTTP-compliant response codes.",
+      "Modular separation of schema routers and controller modules.",
     ],
     codeSnippet: `// DRY Asynchronous Routing Handler
 export const asyncHandler = (fn) => (req, res, next) => {
@@ -111,20 +112,21 @@ export const getProjects = asyncHandler(async (req, res) => {
     results: projects.length,
     data: { projects }
   });
-});`
+});`,
   },
   {
-    id: 'database',
-    title: '4. Database & Relational Modeling',
-    role: 'Persistence & Data Integrity',
-    tech: 'MongoDB, Mongoose ORM, Aggregations',
+    id: "database",
+    title: "4. Database & Relational Modeling",
+    role: "Persistence & Data Integrity",
+    tech: "MongoDB, Mongoose ORM, Aggregations",
     icon: Database,
-    description: 'Designing high-performance non-relational database models. I structure modular collections with strict Mongoose validation, build multi-stage pipeline aggregate filters, and configure optimal index keys on frequent queries.',
+    description:
+      "Designing high-performance non-relational database models. I structure modular collections with strict Mongoose validation, build multi-stage pipeline aggregate filters, and configure optimal index keys on frequent queries.",
     principles: [
-      'Document schemas modeled specifically for high read efficiency.',
-      'Custom database index configurations for query latency reduction.',
-      'Strict virtual parameter mapping and schema pre-save hooks.',
-      'Dynamic transactional operations ensuring robust data cycles.'
+      "Document schemas modeled specifically for high read efficiency.",
+      "Custom database index configurations for query latency reduction.",
+      "Strict virtual parameter mapping and schema pre-save hooks.",
+      "Dynamic transactional operations ensuring robust data cycles.",
     ],
     codeSnippet: `// Mongoose Schema with Indexed Queries
 import mongoose from 'mongoose';
@@ -142,13 +144,15 @@ const userSchema = new mongoose.Schema({
   role: { type: String, default: 'user', enum: ['user', 'admin'] }
 }, { timestamps: true });
 
-export const User = mongoose.model('User', userSchema);`
-  }
+export const User = mongoose.model('User', userSchema);`,
+  },
 ];
 
 export default function ArchitectureBlueprint() {
-  const [activeId, setActiveId] = useState('frontend');
-  const activeLayer = blueprintLayers.find(layer => layer.id === activeId) || blueprintLayers[0];
+  const [activeId, setActiveId] = useState("frontend");
+  const activeLayer =
+    blueprintLayers.find((layer) => layer.id === activeId) ||
+    blueprintLayers[0];
 
   return (
     <section
@@ -159,7 +163,6 @@ export default function ArchitectureBlueprint() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
         {/* Section Title */}
         <div className="flex flex-col items-center text-center mb-16">
           <motion.div
@@ -168,24 +171,25 @@ export default function ArchitectureBlueprint() {
             viewport={{ once: true }}
             className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-mono font-bold tracking-wider uppercase mb-3"
           >
-            <Code2 className="w-3.5 h-3.5 text-rose-500" /> Engineering Architecture
+            <Code2 className="w-3.5 h-3.5 text-rose-500" /> Engineering
+            Architecture
           </motion.div>
-          
+
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Full-Stack{' '}
+            Full-Stack{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               MERN Blueprint
             </span>
           </h2>
           <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest max-w-xl">
-            Interactive visualization of my structural implementation & code standard
+            Interactive visualization of my structural implementation & code
+            standard
           </p>
           <div className="w-16 h-1 bg-rose-500 rounded-full mt-3" />
         </div>
 
         {/* Blueprint Layout Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          
           {/* Left Column: Interactive Stack Map */}
           <div className="lg:col-span-5 flex flex-col gap-4">
             <div className="text-left mb-2 px-1">
@@ -193,7 +197,8 @@ export default function ArchitectureBlueprint() {
                 Lifecycle Stack
               </span>
               <p className="text-xs text-slate-500 dark:text-rose-100/40 mt-1">
-                Select a layer to view architectural standards and code structure.
+                Select a layer to view architectural standards and code
+                structure.
               </p>
             </div>
 
@@ -207,8 +212,8 @@ export default function ArchitectureBlueprint() {
                   onClick={() => setActiveId(layer.id)}
                   className={`w-full p-5 rounded-2xl border text-left flex items-center gap-4 transition-all duration-300 relative overflow-hidden group cursor-pointer ${
                     isSelected
-                      ? 'border-rose-500 bg-[#1f0611] dark:bg-[#1c040d] text-white shadow-md'
-                      : 'border-slate-200 dark:border-rose-950/20 bg-white dark:bg-[#120308]/60 hover:border-rose-500/30'
+                      ? "border-rose-500 bg-[#1f0611] dark:bg-[#1c040d] text-white shadow-md"
+                      : "border-slate-200 dark:border-rose-950/20 bg-white dark:bg-[#120308]/60 hover:border-rose-500/30"
                   }`}
                 >
                   {/* Decorative glowing background for selection */}
@@ -217,32 +222,46 @@ export default function ArchitectureBlueprint() {
                   )}
 
                   {/* Left Icon Area */}
-                  <div className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all ${
-                    isSelected
-                      ? 'bg-rose-500/25 border-rose-500/40 text-rose-400'
-                      : 'bg-slate-100 dark:bg-rose-950/20 border-slate-200/60 dark:border-rose-500/10 text-slate-400 dark:text-rose-300/60 group-hover:text-rose-400'
-                  }`}>
+                  <div
+                    className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all ${
+                      isSelected
+                        ? "bg-rose-500/25 border-rose-500/40 text-rose-400"
+                        : "bg-slate-100 dark:bg-rose-950/20 border-slate-200/60 dark:border-rose-500/10 text-slate-400 dark:text-rose-300/60 group-hover:text-rose-400"
+                    }`}
+                  >
                     <Icon className="w-5 h-5" />
                   </div>
 
                   {/* Text details */}
                   <div className="flex-1 min-w-0">
-                    <span className={`text-[10px] font-mono font-bold uppercase tracking-wide block ${
-                      isSelected ? 'text-rose-400' : 'text-slate-400 dark:text-rose-300/40'
-                    }`}>
+                    <span
+                      className={`text-[10px] font-mono font-bold uppercase tracking-wide block ${
+                        isSelected
+                          ? "text-rose-400"
+                          : "text-slate-400 dark:text-rose-300/40"
+                      }`}
+                    >
                       {layer.role}
                     </span>
-                    <h3 className={`text-sm sm:text-base font-bold font-sans mt-0.5 transition-colors ${
-                      isSelected ? 'text-white' : 'text-slate-800 dark:text-rose-100 group-hover:text-rose-400'
-                    }`}>
-                      {layer.title.replace(/^[0-9]\.\s/, '')}
+                    <h3
+                      className={`text-sm sm:text-base font-bold font-sans mt-0.5 transition-colors ${
+                        isSelected
+                          ? "text-white"
+                          : "text-slate-800 dark:text-rose-100 group-hover:text-rose-400"
+                      }`}
+                    >
+                      {layer.title.replace(/^[0-9]\.\s/, "")}
                     </h3>
                   </div>
 
                   {/* Active Indicator Chevron */}
-                  <ChevronRight className={`w-4 h-4 transition-transform duration-300 shrink-0 ${
-                    isSelected ? 'text-rose-400 translate-x-0.5' : 'text-slate-300 dark:text-rose-500/20 group-hover:text-rose-400'
-                  }`} />
+                  <ChevronRight
+                    className={`w-4 h-4 transition-transform duration-300 shrink-0 ${
+                      isSelected
+                        ? "text-rose-400 translate-x-0.5"
+                        : "text-slate-300 dark:text-rose-500/20 group-hover:text-rose-400"
+                    }`}
+                  />
                 </button>
               );
             })}
@@ -319,13 +338,10 @@ export default function ArchitectureBlueprint() {
                     </pre>
                   </div>
                 </div>
-
               </motion.div>
             </AnimatePresence>
           </div>
-
         </div>
-
       </div>
     </section>
   );

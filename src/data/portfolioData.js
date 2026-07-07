@@ -235,6 +235,18 @@ export const certificates = [
     date: "Jul 2025",
     credentialUrl: "certificate-4.pdf",
   },
+  {
+    title: "Digital Edge 101",
+    issuer: "FutureSkills Prime (MeitY & NASSCOM)",
+    date: "Jul 2026",
+    credentialUrl: "certificate-5.pdf",
+  },
+  {
+    title: "Data Science using Python Internship",
+    issuer: "Council for Skills and Competencies (CSC India) & APSCHE",
+    date: "Jun 2026",
+    credentialUrl: "certificate-6.pdf",
+  },
 ];
 
 export const services = [

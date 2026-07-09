@@ -157,7 +157,7 @@ export default function ArchitectureBlueprint() {
   return (
     <section
       id="blueprint"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20 bg-slate-50/50 dark:bg-[#0c0205]/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border bg-theme-bg"
     >
       {/* Background Tech Mesh */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
@@ -175,13 +175,13 @@ export default function ArchitectureBlueprint() {
             Architecture
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             Full-Stack{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               MERN Blueprint
             </span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest max-w-xl">
+          <p className="text-xs sm:text-sm font-mono text-theme-muted mt-2 uppercase tracking-widest max-w-xl">
             Interactive visualization of my structural implementation & code
             standard
           </p>
@@ -196,7 +196,7 @@ export default function ArchitectureBlueprint() {
               <span className="text-[10px] font-mono text-rose-400/80 font-bold uppercase tracking-widest block">
                 Lifecycle Stack
               </span>
-              <p className="text-xs text-slate-500 dark:text-rose-100/40 mt-1">
+              <p className="text-xs text-theme-muted mt-1">
                 Select a layer to view architectural standards and code
                 structure.
               </p>
@@ -212,8 +212,8 @@ export default function ArchitectureBlueprint() {
                   onClick={() => setActiveId(layer.id)}
                   className={`w-full p-5 rounded-2xl border text-left flex items-center gap-4 transition-all duration-300 relative overflow-hidden group cursor-pointer ${
                     isSelected
-                      ? "border-rose-500 bg-[#1f0611] dark:bg-[#1c040d] text-white shadow-md"
-                      : "border-slate-200 dark:border-rose-950/20 bg-white dark:bg-[#120308]/60 hover:border-rose-500/30"
+                      ? "border-rose-500 bg-theme-card text-theme-text shadow-md"
+                      : "border-theme-border bg-theme-card hover:border-theme-primary/30 text-theme-text"
                   }`}
                 >
                   {/* Decorative glowing background for selection */}
@@ -226,7 +226,7 @@ export default function ArchitectureBlueprint() {
                     className={`w-11 h-11 rounded-xl flex items-center justify-center border transition-all ${
                       isSelected
                         ? "bg-rose-500/25 border-rose-500/40 text-rose-400"
-                        : "bg-slate-100 dark:bg-rose-950/20 border-slate-200/60 dark:border-rose-500/10 text-slate-400 dark:text-rose-300/60 group-hover:text-rose-400"
+                        : "bg-theme-bg border-theme-border text-theme-muted group-hover:text-rose-400"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -238,7 +238,7 @@ export default function ArchitectureBlueprint() {
                       className={`text-[10px] font-mono font-bold uppercase tracking-wide block ${
                         isSelected
                           ? "text-rose-400"
-                          : "text-slate-400 dark:text-rose-300/40"
+                          : "text-theme-muted"
                       }`}
                     >
                       {layer.role}
@@ -246,8 +246,8 @@ export default function ArchitectureBlueprint() {
                     <h3
                       className={`text-sm sm:text-base font-bold font-sans mt-0.5 transition-colors ${
                         isSelected
-                          ? "text-white"
-                          : "text-slate-800 dark:text-rose-100 group-hover:text-rose-400"
+                          ? "text-theme-text"
+                          : "text-theme-text group-hover:text-rose-400"
                       }`}
                     >
                       {layer.title.replace(/^[0-9]\.\s/, "")}
@@ -259,7 +259,7 @@ export default function ArchitectureBlueprint() {
                     className={`w-4 h-4 transition-transform duration-300 shrink-0 ${
                       isSelected
                         ? "text-rose-400 translate-x-0.5"
-                        : "text-slate-300 dark:text-rose-500/20 group-hover:text-rose-400"
+                        : "text-theme-muted group-hover:text-rose-400"
                     }`}
                   />
                 </button>
@@ -279,7 +279,7 @@ export default function ArchitectureBlueprint() {
                 className="w-full flex flex-col gap-6"
               >
                 {/* Details Card */}
-                <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-slate-200/50 dark:border-rose-500/10 shadow-lg text-left relative overflow-hidden bg-white/70 dark:bg-[#140409]/95">
+                <div className="p-6 sm:p-8 rounded-3xl glass-panel border border-theme-border shadow-lg text-left relative overflow-hidden bg-theme-card/95">
                   <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-rose-500/10 to-transparent pointer-events-none" />
 
                   {/* Header */}
@@ -287,16 +287,16 @@ export default function ArchitectureBlueprint() {
                     <span className="px-2.5 py-1 rounded-md bg-rose-500/10 border border-rose-500/20 text-rose-400 text-xs font-mono font-bold tracking-wide">
                       {activeLayer.tech}
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white mt-4 tracking-tight">
+                    <h3 className="text-xl sm:text-2xl font-extrabold text-theme-text mt-4 tracking-tight">
                       {activeLayer.title}
                     </h3>
-                    <p className="text-slate-600 dark:text-rose-100/70 text-sm leading-relaxed mt-2.5">
+                    <p className="text-theme-muted text-sm leading-relaxed mt-2.5">
                       {activeLayer.description}
                     </p>
                   </div>
 
                   {/* Key Implementation Priorities */}
-                  <div className="mt-6 pt-6 border-t border-slate-200/60 dark:border-rose-500/10">
+                  <div className="mt-6 pt-6 border-t border-theme-border">
                     <h4 className="text-xs font-mono text-rose-400/80 uppercase font-bold tracking-widest mb-3">
                       Core Architectural Priorities
                     </h4>
@@ -304,7 +304,7 @@ export default function ArchitectureBlueprint() {
                       {activeLayer.principles.map((principle, index) => (
                         <div key={index} className="flex items-start gap-2.5">
                           <CheckCircle2 className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
-                          <span className="text-xs text-slate-600 dark:text-rose-100/80 leading-normal font-sans">
+                          <span className="text-xs text-theme-muted leading-normal font-sans">
                             {principle}
                           </span>
                         </div>
@@ -314,12 +314,12 @@ export default function ArchitectureBlueprint() {
                 </div>
 
                 {/* Classic Clean Code Container */}
-                <div className="rounded-3xl border border-slate-200/50 dark:border-rose-500/10 shadow-xl overflow-hidden text-left flex flex-col bg-[#140309] dark:bg-[#0c0104]">
+                <div className="rounded-3xl border border-theme-border shadow-xl overflow-hidden text-left flex flex-col bg-theme-card">
                   {/* Custom Header bar resembling a terminal */}
-                  <div className="bg-[#1c050d] px-5 py-3 border-b border-rose-500/10 flex items-center justify-between">
+                  <div className="bg-theme-bg px-5 py-3 border-b border-theme-border flex items-center justify-between">
                     <div className="flex items-center gap-1.5">
                       <Terminal className="w-4 h-4 text-rose-400" />
-                      <span className="text-[10px] font-mono text-rose-300/80 font-bold uppercase tracking-wider">
+                      <span className="text-[10px] font-mono text-rose-400 dark:text-rose-300/80 font-bold uppercase tracking-wider">
                         implementation_standard.ts
                       </span>
                     </div>
@@ -333,7 +333,7 @@ export default function ArchitectureBlueprint() {
 
                   {/* Code Area */}
                   <div className="p-5 sm:p-6 overflow-x-auto">
-                    <pre className="font-mono text-[11px] sm:text-xs text-rose-100/90 leading-relaxed whitespace-pre">
+                    <pre className="font-mono text-[11px] sm:text-xs text-rose-500 dark:text-rose-100/90 leading-relaxed whitespace-pre">
                       <code>{activeLayer.codeSnippet}</code>
                     </pre>
                   </div>

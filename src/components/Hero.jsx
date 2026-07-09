@@ -65,7 +65,7 @@ export default function Hero() {
             </div>
 
             {/* Main Greeting Title */}
-            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
+            <h1 className="text-4xl sm:text-6xl font-extrabold tracking-tight text-theme-text leading-tight">
               Hi, I'm{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold relative inline-block">
                 {personalInfo.fullName.split(" ")[0]}
@@ -74,12 +74,12 @@ export default function Hero() {
             </h1>
 
             {/* Subtitle Role */}
-            <h2 className="text-2xl sm:text-3xl font-bold text-pink-300 tracking-tight">
+            <h2 className="text-2xl sm:text-3xl font-bold text-pink-500 dark:text-pink-300 tracking-tight">
               MERN Stack Architect & UX Engineer
             </h2>
 
             {/* Clean Short Description */}
-            <p className="text-sm sm:text-base text-rose-100/70 max-w-xl leading-relaxed">
+            <p className="text-sm sm:text-base text-theme-muted max-w-xl leading-relaxed">
               I build modern, scalable, and ultra-responsive web experiences. By
               merging robust backend services with polished, pixel-precise
               frontend interfaces, I bring ideas to life with flawless
@@ -87,12 +87,12 @@ export default function Hero() {
             </p>
 
             {/* Quick Info Badges */}
-            <div className="flex flex-wrap gap-4 text-xs font-mono text-rose-300/80">
-              <div className="flex items-center gap-1.5 bg-[#1a050d]/80 px-3 py-1.5 rounded-full border border-rose-500/10">
+            <div className="flex flex-wrap gap-4 text-xs font-mono text-theme-muted">
+              <div className="flex items-center gap-1.5 bg-theme-card/80 px-3 py-1.5 rounded-full border border-theme-border">
                 <MapPin className="w-3.5 h-3.5 text-rose-400" />
                 <span>Based in {personalInfo.location}</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-[#1a050d]/80 px-3 py-1.5 rounded-full border border-rose-500/10">
+              <div className="flex items-center gap-1.5 bg-theme-card/80 px-3 py-1.5 rounded-full border border-theme-border">
                 <Calendar className="w-3.5 h-3.5 text-rose-400 animate-pulse" />
                 <span>Available Now</span>
               </div>
@@ -112,7 +112,7 @@ export default function Hero() {
                 href={personalInfo.resumeUrl}
                 target={personalInfo.resumeUrl !== "#" ? "_blank" : undefined}
                 rel="noreferrer"
-                className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-rose-500/30 hover:border-rose-400 text-rose-300 hover:text-white bg-[#15050a]/40 hover:bg-rose-500/5 font-sans font-bold text-xs uppercase tracking-wider hover:-translate-y-0.5 transition-all duration-300"
+                className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-theme-border hover:border-theme-primary/60 text-theme-muted hover:text-theme-text bg-theme-card/40 hover:bg-theme-primary/5 font-sans font-bold text-xs uppercase tracking-wider hover:-translate-y-0.5 transition-all duration-300"
               >
                 <span>Download CV</span>
                 <Download className="w-4 h-4" />
@@ -121,7 +121,7 @@ export default function Hero() {
 
             {/* Follow Me Icons */}
             <div className="flex items-center gap-3.5 pt-4">
-              <span className="text-[10px] font-mono font-bold tracking-widest text-rose-400/60 uppercase">
+              <span className="text-[10px] font-mono font-bold tracking-widest text-theme-muted uppercase">
                 Follow me:
               </span>
               <div className="flex gap-2">
@@ -137,7 +137,7 @@ export default function Hero() {
                       href={social.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="w-8 h-8 rounded-full bg-[#1b050c]/80 border border-rose-500/15 hover:border-rose-400 text-rose-300 hover:text-white flex items-center justify-center transition-all duration-300"
+                      className="w-8 h-8 rounded-full bg-theme-card/80 border border-theme-border text-theme-muted hover:text-theme-primary flex items-center justify-center transition-all duration-300"
                     >
                       <Icon className="w-3.5 h-3.5" />
                     </a>
@@ -162,19 +162,19 @@ export default function Hero() {
             <div className="absolute w-[80%] h-[80%] rounded-full bg-gradient-to-tr from-rose-500 to-pink-600 filter blur-3xl opacity-20 -z-10" />
 
             {/* Core Card Container */}
-            <div className="w-full max-w-lg rounded-3xl bg-[#1d0a11]/90 border border-rose-500/20 p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between">
+            <div className="w-full max-w-lg rounded-3xl bg-theme-card/90 border border-theme-border p-6 sm:p-8 shadow-2xl relative overflow-hidden flex flex-col justify-between">
               {/* Header Status Badges */}
-              <div className="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-rose-500/10">
+              <div className="flex flex-wrap items-center justify-between gap-2 pb-6 border-b border-theme-border">
                 <div className="flex items-center gap-2">
-                  <div className="flex items-center gap-1.5 bg-[#2a0c17] px-3 py-1 rounded-full border border-rose-500/10 text-[9px] font-mono font-bold text-rose-300 uppercase tracking-wider">
+                  <div className="flex items-center gap-1.5 bg-theme-bg px-3 py-1 rounded-full border border-theme-border text-[9px] font-mono font-bold text-rose-400 uppercase tracking-wider">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-ping" />
                     System Ready
                   </div>
-                  <div className="bg-[#2a0c17] px-3 py-1 rounded-full border border-rose-500/10 text-[9px] font-mono font-bold text-rose-300 uppercase tracking-wider">
+                  <div className="bg-theme-bg px-3 py-1 rounded-full border border-theme-border text-[9px] font-mono font-bold text-rose-400 uppercase tracking-wider">
                     Portfolio 2026
                   </div>
                 </div>
-                <div className="text-[10px] font-mono text-emerald-400 font-bold uppercase tracking-widest flex items-center gap-1">
+                <div className="text-[10px] font-mono text-emerald-500 dark:text-emerald-400 font-bold uppercase tracking-widest flex items-center gap-1">
                   <span>ONLINE</span>
                 </div>
               </div>
@@ -183,13 +183,13 @@ export default function Hero() {
               <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-center py-6">
                 {/* Left Mini Bio / Text */}
                 <div className="md:col-span-6 space-y-4">
-                  <div className="text-xs font-mono text-rose-400/80 uppercase tracking-widest font-bold">
+                  <div className="text-xs font-mono text-rose-500 dark:text-rose-400/80 uppercase tracking-widest font-bold">
                     CORE UI
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-black text-white leading-tight">
+                  <h3 className="text-xl sm:text-2xl font-black text-theme-text leading-tight">
                     Welcome to my Portfolio Website
                   </h3>
-                  <p className="text-xs text-rose-100/50 leading-relaxed">
+                  <p className="text-xs text-theme-muted leading-relaxed">
                     Building responsive, reliable, and fast digital experiences
                     with a focus on clean modular UI and solid backends.
                   </p>
@@ -197,13 +197,13 @@ export default function Hero() {
                   <div className="flex gap-2.5 pt-2">
                     <button
                       onClick={() => handleScrollTo("projects")}
-                      className="bg-[#250a14] hover:bg-[#350f1d] text-[10px] font-mono font-bold uppercase text-white px-3 py-1.5 rounded-full border border-rose-500/15 flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="bg-theme-bg hover:bg-theme-card text-[10px] font-mono font-bold uppercase text-theme-text px-3 py-1.5 rounded-full border border-theme-border flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>CODE</span>
                     </button>
                     <button
                       onClick={() => handleScrollTo("about")}
-                      className="bg-[#250a14] hover:bg-[#350f1d] text-[10px] font-mono font-bold uppercase text-white px-3 py-1.5 rounded-full border border-rose-500/15 flex items-center gap-1.5 transition-colors cursor-pointer"
+                      className="bg-theme-bg hover:bg-theme-card text-[10px] font-mono font-bold uppercase text-theme-text px-3 py-1.5 rounded-full border border-theme-border flex items-center gap-1.5 transition-colors cursor-pointer"
                     >
                       <span>PROFILE</span>
                     </button>
@@ -213,33 +213,33 @@ export default function Hero() {
                 {/* Right Interactive Orb Space (Screenshot 3) */}
                 <div className="md:col-span-6 flex justify-center relative py-6">
                   {/* Central Glow Core */}
-                  <div className="absolute w-28 h-28 rounded-full bg-rose-500/10 flex items-center justify-center border border-rose-500/20 shadow-[0_0_30px_rgba(244,63,94,0.2)]">
-                    <div className="absolute w-20 h-20 rounded-full bg-rose-950/40 flex items-center justify-center animate-pulse">
-                      <span className="text-[10px] font-mono font-extrabold text-white tracking-widest uppercase glow-text-rose">
+                  <div className="absolute w-28 h-28 rounded-full bg-rose-500/10 flex items-center justify-center border border-theme-border shadow-[0_0_30px_rgba(244,63,94,0.15)]">
+                    <div className="absolute w-20 h-20 rounded-full bg-theme-bg/60 flex items-center justify-center animate-pulse">
+                      <span className="text-[10px] font-mono font-extrabold text-theme-text tracking-widest uppercase glow-text-rose">
                         WELCOME
                       </span>
                     </div>
                   </div>
 
                   {/* Outer Orbital Rotating Orbit Track Circle */}
-                  <div className="w-44 h-44 rounded-full border border-rose-500/10 flex items-center justify-center relative">
+                  <div className="w-44 h-44 rounded-full border border-theme-border flex items-center justify-center relative">
                     {/* Orbit Item 1: MongoDB Node */}
-                    <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-1 shadow-md">
+                    <div className="absolute w-7 h-7 rounded-full bg-theme-card border border-theme-border flex items-center justify-center text-rose-500 dark:text-rose-400 orbit-item-1 shadow-md">
                       <Database className="w-3.5 h-3.5" />
                     </div>
 
                     {/* Orbit Item 2: Express Server Node */}
-                    <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-2 shadow-md">
+                    <div className="absolute w-7 h-7 rounded-full bg-theme-card border border-theme-border flex items-center justify-center text-rose-500 dark:text-rose-400 orbit-item-2 shadow-md">
                       <Server className="w-3.5 h-3.5" />
                     </div>
 
                     {/* Orbit Item 3: React Layer Node */}
-                    <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-3 shadow-md">
+                    <div className="absolute w-7 h-7 rounded-full bg-theme-card border border-theme-border flex items-center justify-center text-rose-500 dark:text-rose-400 orbit-item-3 shadow-md">
                       <Layers className="w-3.5 h-3.5" />
                     </div>
 
                     {/* Orbit Item 4: Node Runtime Node */}
-                    <div className="absolute w-7 h-7 rounded-full bg-[#1b060f] border border-rose-500/30 flex items-center justify-center text-rose-400 orbit-item-4 shadow-md">
+                    <div className="absolute w-7 h-7 rounded-full bg-theme-card border border-theme-border flex items-center justify-center text-rose-500 dark:text-rose-400 orbit-item-4 shadow-md">
                       <Cpu className="w-3.5 h-3.5" />
                     </div>
                   </div>
@@ -247,21 +247,21 @@ export default function Hero() {
               </div>
 
               {/* Bottom Real-time Telemetry Stats (Screenshot 3) */}
-              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-rose-500/10">
-                <div className="bg-[#17050b]/80 p-3 rounded-2xl border border-rose-500/10">
-                  <div className="text-[15px] font-bold text-white font-mono leading-none">
+              <div className="grid grid-cols-2 gap-4 pt-4 border-t border-theme-border">
+                <div className="bg-theme-card/85 p-3 rounded-2xl border border-theme-border">
+                  <div className="text-[15px] font-bold text-theme-text font-mono leading-none">
                     06
                   </div>
-                  <div className="text-[9px] font-mono text-rose-400/60 uppercase tracking-wider mt-1">
+                  <div className="text-[9px] font-mono text-theme-muted uppercase tracking-wider mt-1">
                     Modules Loaded
                   </div>
                 </div>
-                <div className="bg-[#17050b]/80 p-3 rounded-2xl border border-rose-500/10">
-                  <div className="text-[15px] font-bold text-white font-mono leading-none flex items-center gap-1">
+                <div className="bg-theme-card/85 p-3 rounded-2xl border border-theme-border">
+                  <div className="text-[15px] font-bold text-theme-text font-mono leading-none flex items-center gap-1">
                     <span>12ms</span>
-                    <Activity className="w-3.5 h-3.5 text-rose-400 animate-pulse" />
+                    <Activity className="w-3.5 h-3.5 text-rose-500 dark:text-rose-400 animate-pulse" />
                   </div>
-                  <div className="text-[9px] font-mono text-rose-400/60 uppercase tracking-wider mt-1">
+                  <div className="text-[9px] font-mono text-theme-muted uppercase tracking-wider mt-1">
                     Performance Stable
                   </div>
                 </div>

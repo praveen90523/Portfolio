@@ -40,7 +40,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
@@ -49,12 +49,12 @@ export default function About() {
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/10 text-rose-400 text-xs font-mono font-bold tracking-wider uppercase mb-3"
+            className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-theme-primary/10 text-theme-primary text-xs font-mono font-bold tracking-wider uppercase mb-3"
           >
-            <User className="w-3.5 h-3.5 text-rose-500" /> About Me
+            <User className="w-3.5 h-3.5 text-theme-primary" /> About Me
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             Who Is{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Praveen?
@@ -77,34 +77,34 @@ export default function About() {
               <div className="absolute -inset-1.5 bg-gradient-to-r from-rose-500 to-pink-500 rounded-2xl blur-lg opacity-40 group-hover:opacity-60 transition duration-1000 group-hover:duration-200" />
 
               {/* Main Card */}
-              <div className="relative rounded-2xl overflow-hidden glass-panel border border-rose-500/20 p-4">
+              <div className="relative rounded-2xl overflow-hidden glass-panel border border-theme-border p-4">
                 {/* Visual Avatar Frame */}
-                <div className="aspect-square w-full rounded-xl bg-[#1b0610] overflow-hidden relative flex items-center justify-center">
+                <div className="aspect-square w-full rounded-xl bg-theme-bg overflow-hidden relative flex items-center justify-center">
                   <img
-                    src="/praveen_avatar.png"
+                    src="/praveen_avatar.jpeg"
                     alt="Praveen Portrait"
                     referrerPolicy="no-referrer"
                     className="object-cover w-full h-full opacity-95 group-hover:scale-105 transition-all duration-500"
                   />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#120307] via-transparent to-transparent opacity-60" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-theme-bg via-transparent to-transparent opacity-60" />
 
                   {/* Decorative float badges */}
-                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center bg-[#1c050d]/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-rose-500/10">
+                  <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center bg-theme-card/90 backdrop-blur-md px-3.5 py-2.5 rounded-xl border border-theme-border">
                     <div className="flex flex-col">
-                      <span className="text-[10px] font-mono text-rose-300/60">
+                      <span className="text-[10px] font-mono text-theme-muted">
                         STATUS
                       </span>
-                      <span className="text-xs font-sans font-bold text-white flex items-center gap-1.5">
+                      <span className="text-xs font-sans font-bold text-theme-text flex items-center gap-1.5">
                         <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse shadow-[0_0_8px_rgba(244,63,94,0.8)]" />
                         Active Coding
                       </span>
                     </div>
                     <div className="flex flex-col text-right">
-                      <span className="text-[10px] font-mono text-rose-300/60">
+                      <span className="text-[10px] font-mono text-theme-muted">
                         LOC
                       </span>
-                      <span className="text-xs font-sans font-bold text-white">
+                      <span className="text-xs font-sans font-bold text-theme-text">
                         {personalInfo.location}
                       </span>
                     </div>
@@ -122,18 +122,18 @@ export default function About() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-7 space-y-6 text-left"
           >
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+            <h3 className="text-xl sm:text-2xl font-bold text-theme-text flex items-center gap-2">
               <Compass className="w-6 h-6 text-rose-500" /> My Mission & Career
               Objective
             </h3>
 
-            <p className="text-slate-600 dark:text-rose-100/70 leading-relaxed text-sm sm:text-base">
+            <p className="text-theme-muted leading-relaxed text-sm sm:text-base">
               {personalInfo.bio} I specialize in engineering high-fidelity
               client views in React paired with reliable, robust Express servers
               and MongoDB clusters.
             </p>
 
-            <p className="text-slate-600 dark:text-rose-100/70 leading-relaxed text-sm sm:text-base">
+            <p className="text-theme-muted leading-relaxed text-sm sm:text-base">
               My coding philosophy centers on architectural honesty and user
               delight. Every margin, hover transition, and database query is
               crafted purposefully to ensure maximum responsiveness and clean
@@ -153,12 +153,12 @@ export default function About() {
                 return (
                   <div
                     key={idx}
-                    className="flex items-center gap-3 bg-slate-100 dark:bg-rose-950/20 p-3 rounded-xl border border-slate-200/50 dark:border-rose-500/10"
+                    className="flex items-center gap-3 bg-theme-card p-3 rounded-xl border border-theme-border"
                   >
-                    <div className="w-10 h-10 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center border border-rose-500/10">
+                    <div className="w-10 h-10 rounded-lg bg-theme-primary/10 text-theme-primary flex items-center justify-center border border-theme-border">
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-sans font-semibold text-xs sm:text-sm text-slate-800 dark:text-rose-100">
+                    <span className="font-sans font-semibold text-xs sm:text-sm text-theme-text">
                       {highlight.label}
                     </span>
                   </div>
@@ -178,20 +178,20 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1, duration: 0.5 }}
-                className="relative overflow-hidden rounded-2xl glass-panel border border-slate-200/60 dark:border-rose-500/15 p-6 flex flex-col items-center justify-center text-center shadow-md dark:shadow-[0_4px_25px_rgba(244,63,94,0.05)] group hover:border-rose-500/40 transition-colors duration-300"
+                className="relative overflow-hidden rounded-2xl glass-panel border border-theme-border p-6 flex flex-col items-center justify-center text-center shadow-theme-soft group hover:border-theme-primary/40 transition-colors duration-300"
               >
                 {/* Background lighting */}
                 <div className="absolute top-0 inset-x-0 h-[3px] bg-gradient-to-r from-rose-500 to-pink-500" />
 
-                <span className="font-sans font-black text-3xl sm:text-4xl text-slate-900 dark:text-white flex items-center gap-0.5 tracking-tight group-hover:text-rose-400 transition-colors">
+                <span className="font-sans font-black text-3xl sm:text-4xl text-theme-text flex items-center gap-0.5 tracking-tight group-hover:text-rose-400 transition-colors">
                   <StatCounter target={stat.value} />
                 </span>
 
-                <span className="font-sans font-bold text-xs sm:text-sm text-slate-800 dark:text-rose-100 mt-2">
+                <span className="font-sans font-bold text-xs sm:text-sm text-theme-text mt-2">
                   {stat.label}
                 </span>
 
-                <span className="text-[10px] font-mono text-slate-400 dark:text-rose-300/40 mt-1 uppercase tracking-wide">
+                <span className="text-[10px] font-mono text-theme-muted mt-1 uppercase tracking-wide">
                   {stat.sub}
                 </span>
               </motion.div>

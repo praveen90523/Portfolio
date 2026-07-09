@@ -88,7 +88,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
@@ -102,13 +102,13 @@ export default function Contact() {
             <Mail className="w-3.5 h-3.5 text-rose-500" /> Direct touchpoints
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             Contact{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Me
             </span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest">
+          <p className="text-xs sm:text-sm font-mono text-theme-muted mt-2 uppercase tracking-widest">
             Initiate a project booking request or drop a quick hello
           </p>
           <div className="w-16 h-1 bg-rose-500 rounded-full mt-3" />
@@ -118,10 +118,10 @@ export default function Contact() {
           {/* Contact Left Column (Details + Map graphic) cols 5 */}
           <div className="lg:col-span-5 space-y-8 text-left">
             <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-theme-text mb-4">
                 Let's Build Together
               </h3>
-              <p className="text-sm sm:text-base text-slate-600 dark:text-rose-100/70 leading-relaxed">
+              <p className="text-sm sm:text-base text-theme-muted leading-relaxed">
                 Have a project concept in mind, an academic assignment
                 requirement, or seeking to add a full-stack engineer to your
                 division? Send your particulars and I will respond within 12
@@ -168,16 +168,16 @@ export default function Contact() {
                   <a
                     key={idx}
                     href={item.href}
-                    className="flex items-center gap-4 p-4 rounded-xl border border-slate-200/60 dark:border-rose-500/10 bg-slate-900/5 dark:bg-[#1a050d]/35 hover:border-rose-500/25 hover:translate-x-1 transition-all duration-300"
+                    className="flex items-center gap-4 p-4 rounded-xl border border-theme-border bg-theme-card hover:border-theme-primary/25 hover:translate-x-1 transition-all duration-300"
                   >
                     <div className="w-11 h-11 rounded-lg bg-rose-500/10 text-rose-400 flex items-center justify-center shrink-0 border border-rose-500/15">
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <span className="text-[10px] font-mono text-slate-400 dark:text-rose-300/40 uppercase tracking-widest block leading-none">
+                      <span className="text-[10px] font-mono text-theme-muted uppercase tracking-widest block leading-none">
                         {item.label}
                       </span>
-                      <span className="font-sans font-bold text-sm sm:text-base text-slate-800 dark:text-rose-100 mt-1 block">
+                      <span className="font-sans font-bold text-sm sm:text-base text-theme-text mt-1 block">
                         {item.val}
                       </span>
                     </div>
@@ -187,8 +187,8 @@ export default function Contact() {
             </div>
 
             {/* Premium Stylized Map Graphic */}
-            <div className="relative rounded-2xl overflow-hidden glass-panel border border-slate-200/60 dark:border-rose-500/10 p-4 shadow-md">
-              <div className="aspect-[16/9] w-full rounded-xl bg-[#110207] relative overflow-hidden flex items-center justify-center border border-rose-500/10">
+            <div className="relative rounded-2xl overflow-hidden glass-panel border border-theme-border p-4 shadow-md">
+              <div className="aspect-[16/9] w-full rounded-xl bg-theme-bg relative overflow-hidden flex items-center justify-center border border-theme-border">
                 {/* SVG Abstract grid and pointer representation Visakhapatnam India */}
                 <svg
                   className="absolute inset-0 w-full h-full opacity-40"
@@ -222,19 +222,19 @@ export default function Contact() {
                 </svg>
 
                 {/* Map pointer tag overlay */}
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#1a050d]/90 border border-rose-500/40 px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 z-10">
+                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-theme-card/90 border border-theme-border px-3 py-1.5 rounded-xl shadow-lg flex items-center gap-2 z-10">
                   <MapPin className="w-4 h-4 text-rose-500 animate-bounce" />
                   <div className="text-left">
-                    <span className="text-[9px] font-mono text-slate-400 block uppercase leading-none">
+                    <span className="text-[9px] font-mono text-theme-muted block uppercase leading-none">
                       Current Base
                     </span>
-                    <span className="text-[11px] font-sans font-bold text-white leading-none">
+                    <span className="text-[11px] font-sans font-bold text-theme-text leading-none">
                       Visakhapatnam, IN
                     </span>
                   </div>
                 </div>
 
-                <div className="absolute bottom-2 left-2 text-[8px] font-mono text-slate-500">
+                <div className="absolute bottom-2 left-2 text-[8px] font-mono text-theme-muted">
                   Coordinates: 17.6868° N, 83.2185° E
                 </div>
               </div>
@@ -244,9 +244,9 @@ export default function Contact() {
           {/* Contact Right Column (Form Panel) cols 7 */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-7 p-6 sm:p-8 rounded-2xl glass-panel border border-slate-200/60 dark:border-rose-500/15 shadow-xl"
+            className="lg:col-span-7 p-6 sm:p-8 rounded-2xl glass-panel border border-theme-border shadow-xl"
           >
             {/* Alert informing about optional EmailJS parameters configuration */}
             <div className="mb-6 p-3 bg-emerald-500/10 rounded-xl border border-emerald-500/20 text-sm text-emerald-300 text-left flex items-start gap-3">
@@ -269,16 +269,16 @@ export default function Contact() {
                 <div className="w-16 h-16 rounded-full bg-emerald-500/10 text-emerald-500 flex items-center justify-center mx-auto border border-emerald-500/20">
                   <CheckCircle className="w-8 h-8" />
                 </div>
-                <h4 className="font-sans font-extrabold text-xl text-slate-900 dark:text-white">
+                <h4 className="font-sans font-extrabold text-xl text-theme-text">
                   Message Dispatched!
                 </h4>
-                <p className="text-xs sm:text-sm text-slate-600 dark:text-rose-100/70 max-w-sm mx-auto">
+                <p className="text-xs sm:text-sm text-theme-muted max-w-sm mx-auto">
                   Thank you for reaching out. Praveen has received your details
                   and will get in touch shortly.
                 </p>
                 <button
                   onClick={() => setStatus("idle")}
-                  className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 dark:bg-rose-950/20 dark:hover:bg-rose-900/30 text-slate-700 dark:text-rose-200 font-sans font-semibold text-xs transition-colors cursor-pointer"
+                  className="mt-6 inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-theme-card hover:bg-theme-bg border border-theme-border text-theme-text font-sans font-semibold text-xs transition-colors cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" /> Send Another Message
                 </button>
@@ -291,7 +291,7 @@ export default function Contact() {
                   <div className="space-y-1.5">
                     <label
                       htmlFor="form-name"
-                      className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
+                      className="text-xs font-mono font-bold text-theme-muted uppercase tracking-widest"
                     >
                       Full Name
                     </label>
@@ -303,7 +303,7 @@ export default function Contact() {
                       placeholder="e.g. praveen"
                       value={formData.name}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-rose-950/30 bg-slate-100/50 dark:bg-[#1a050d]/30 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-xl border border-theme-border bg-theme-card text-theme-text focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
                     />
                   </div>
 
@@ -311,7 +311,7 @@ export default function Contact() {
                   <div className="space-y-1.5">
                     <label
                       htmlFor="form-email"
-                      className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
+                      className="text-xs font-mono font-bold text-theme-muted uppercase tracking-widest"
                     >
                       Email Address
                     </label>
@@ -323,7 +323,7 @@ export default function Contact() {
                       placeholder="e.g. name@domain.com"
                       value={formData.email}
                       onChange={handleChange}
-                      className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-rose-950/30 bg-slate-100/50 dark:bg-[#1a050d]/30 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-xl border border-theme-border bg-theme-card text-theme-text focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
                     />
                   </div>
                 </div>
@@ -332,7 +332,7 @@ export default function Contact() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="form-phone"
-                    className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
+                    className="text-xs font-mono font-bold text-theme-muted uppercase tracking-widest"
                   >
                     Phone Number (Optional)
                   </label>
@@ -343,7 +343,7 @@ export default function Contact() {
                     placeholder="e.g. +91 630 251 1171"
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-rose-950/30 bg-slate-100/50 dark:bg-[#1a050d]/30 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
+                    className="w-full px-4 py-3 rounded-xl border border-theme-border bg-theme-card text-theme-text focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm"
                   />
                 </div>
 
@@ -351,7 +351,7 @@ export default function Contact() {
                 <div className="space-y-1.5">
                   <label
                     htmlFor="form-message"
-                    className="text-xs font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest"
+                    className="text-xs font-mono font-bold text-theme-muted uppercase tracking-widest"
                   >
                     Your Message
                   </label>
@@ -363,7 +363,7 @@ export default function Contact() {
                     placeholder="How can we help build your next vision?"
                     value={formData.message}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-rose-950/30 bg-slate-100/50 dark:bg-[#1a050d]/30 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-theme-border bg-theme-card text-theme-text focus:outline-none focus:ring-2 focus:ring-rose-500/30 focus:border-rose-500 transition-all text-sm resize-none"
                   />
                 </div>
 

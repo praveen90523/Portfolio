@@ -6,7 +6,7 @@ export default function Timeline() {
   return (
     <section
       id="timeline"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border"
     >
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Heading */}
@@ -21,20 +21,20 @@ export default function Timeline() {
             Path
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             Learning{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Timeline
             </span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest">
+          <p className="text-xs sm:text-sm font-mono text-theme-muted mt-2 uppercase tracking-widest">
             A chronological sequence of architectural skill acquisition
           </p>
           <div className="w-16 h-1 bg-rose-500 rounded-full mt-3" />
         </div>
 
         {/* Vertical Timeline Track */}
-        <div className="relative border-l-2 border-slate-200 dark:border-rose-950/40 ml-4 sm:ml-32 pl-8 sm:pl-10 space-y-12">
+        <div className="relative border-l-2 border-theme-border ml-4 sm:ml-32 pl-8 sm:pl-10 space-y-12">
           {timeline.map((event, idx) => {
             const isActive = event.status === "active";
             return (
@@ -49,11 +49,11 @@ export default function Timeline() {
                 {/* Timeline node marker */}
                 <div className="absolute -left-[41px] sm:-left-[49px] top-1.5 z-10">
                   {isActive ? (
-                    <div className="w-6 h-6 rounded-full bg-rose-600 border-4 border-slate-900 flex items-center justify-center shadow-lg shadow-rose-500/30 animate-pulse">
+                    <div className="w-6 h-6 rounded-full bg-rose-600 border-4 border-theme-bg flex items-center justify-center shadow-lg shadow-rose-500/30 animate-pulse">
                       <CircleDot className="w-3 h-3 text-white" />
                     </div>
                   ) : (
-                    <div className="w-5 h-5 rounded-full bg-slate-200 dark:bg-[#1f0610] border-4 border-slate-950 flex items-center justify-center group-hover:border-rose-500 transition-colors">
+                    <div className="w-5 h-5 rounded-full bg-theme-card border-4 border-theme-bg flex items-center justify-center group-hover:border-rose-500 transition-colors">
                       <CheckCircle2 className="w-3.5 h-3.5 text-rose-500" />
                     </div>
                   )}
@@ -65,12 +65,12 @@ export default function Timeline() {
                     className={`text-[10px] font-mono font-bold uppercase tracking-wider ${
                       isActive
                         ? "text-rose-400"
-                        : "text-slate-400 dark:text-slate-500"
+                        : "text-theme-muted"
                     }`}
                   >
                     Step 0{idx + 1}
                   </span>
-                  <div className="text-[11px] font-mono font-medium text-slate-500 mt-0.5">
+                  <div className="text-[11px] font-mono font-medium text-theme-muted mt-0.5">
                     {isActive ? "Ongoing Focus" : "Acquired"}
                   </div>
                 </div>
@@ -80,7 +80,7 @@ export default function Timeline() {
                   className={`p-6 rounded-2xl glass-panel border shadow-sm group-hover:border-rose-500/25 transition-all duration-300 relative ${
                     isActive
                       ? "border-rose-500/20 bg-rose-500/[0.02] ring-1 ring-rose-500/10"
-                      : "border-slate-200/50 dark:border-rose-500/15"
+                      : "border-theme-border"
                   }`}
                 >
                   {/* Card corner light */}
@@ -89,7 +89,7 @@ export default function Timeline() {
                   )}
 
                   <div className="flex items-center justify-between gap-2 flex-wrap sm:flex-nowrap">
-                    <h3 className="font-sans font-bold text-base sm:text-lg text-slate-900 dark:text-white group-hover:text-rose-400 transition-colors">
+                    <h3 className="font-sans font-bold text-base sm:text-lg text-theme-text group-hover:text-rose-400 transition-colors">
                       {event.title}
                     </h3>
 
@@ -105,7 +105,7 @@ export default function Timeline() {
                     </span>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-rose-100/70 mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-theme-muted mt-2 leading-relaxed">
                     {event.description}
                   </p>
                 </div>

@@ -7,8 +7,7 @@ export default function BackgroundEffects() {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden transition-colors duration-700">
       {/* Background color base: Deep burgundy dark, soft rose light */}
-      <div className="absolute inset-0 bg-[#120307] transition-colors duration-700 dark:block hidden" />
-      <div className="absolute inset-0 bg-[#FAF4F6] transition-colors duration-700 dark:hidden block" />
+      <div className="absolute inset-0 bg-theme-bg transition-colors duration-700" />
 
       {/* Grid Pattern overlay */}
       <div className="absolute inset-0 grid-bg opacity-70" />

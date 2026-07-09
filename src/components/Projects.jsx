@@ -17,7 +17,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Heading */}
@@ -32,13 +32,13 @@ export default function Projects() {
             Portfolio
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             Featured{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Creations
             </span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest">
+          <p className="text-xs sm:text-sm font-mono text-theme-muted mt-2 uppercase tracking-widest">
             A selective snapshot of full-stack and front-end solutions
           </p>
           <div className="w-16 h-1 bg-rose-500 rounded-full mt-3" />
@@ -57,7 +57,7 @@ export default function Projects() {
               className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-sans font-semibold border transition-all duration-300 cursor-pointer ${
                 filter === btn.id
                   ? "bg-rose-600 border-rose-500 text-white shadow-md shadow-rose-500/15"
-                  : "bg-slate-100 dark:bg-rose-950/20 border-slate-200 dark:border-rose-500/10 text-slate-700 dark:text-rose-100 hover:bg-slate-200 dark:hover:bg-rose-900/30"
+                  : "bg-theme-card border-theme-border text-theme-text hover:bg-theme-bg/85 hover:border-theme-primary/45"
               }`}
             >
               {btn.label}
@@ -83,9 +83,9 @@ export default function Projects() {
                   <div
                     className={`lg:col-span-6 ${isEven ? "lg:order-1" : "lg:order-2"} w-full`}
                   >
-                    <div className="relative group overflow-hidden rounded-2xl glass-panel border border-slate-200/50 dark:border-rose-500/15 p-3 shadow-xl hover:border-rose-500/35 transition-all duration-300">
+                    <div className="relative group overflow-hidden rounded-2xl glass-panel border border-theme-border p-3 shadow-xl hover:border-rose-500/35 transition-all duration-300">
                       {/* Image tag with no-referrer policy */}
-                      <div className="overflow-hidden rounded-xl aspect-[16/10] bg-[#1a050d] relative">
+                      <div className="overflow-hidden rounded-xl aspect-[16/10] bg-theme-bg relative">
                         <img
                           src={project.image}
                           alt={project.title}
@@ -94,7 +94,7 @@ export default function Projects() {
                         />
 
                         {/* Hover Gradient Overlay */}
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#14050a] via-transparent to-transparent opacity-60" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-theme-bg via-transparent to-transparent opacity-60" />
 
                         {/* Featured Badge */}
                         {project.featured && (
@@ -116,24 +116,24 @@ export default function Projects() {
                     </span>
 
                     {/* Project Title */}
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mt-1">
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-theme-text mt-1">
                       {project.title}
                     </h3>
 
                     {/* Project Description */}
-                    <p className="text-sm sm:text-base text-slate-600 dark:text-rose-100/70 mt-4 leading-relaxed">
+                    <p className="text-sm sm:text-base text-theme-muted mt-4 leading-relaxed">
                       {project.description}
                     </p>
 
                     {/* Features checklist */}
                     <div className="mt-5 space-y-2">
-                      <span className="text-xs font-mono font-bold text-slate-400 dark:text-rose-300/40 uppercase tracking-wider block">
+                      <span className="text-xs font-mono font-bold text-theme-muted uppercase tracking-wider block">
                         Key Deliverables:
                       </span>
                       {project.features.map((feat, fIdx) => (
                         <div
                           key={fIdx}
-                          className="flex items-start gap-2 text-slate-700 dark:text-rose-100 text-xs sm:text-sm"
+                          className="flex items-start gap-2 text-theme-text text-xs sm:text-sm"
                         >
                           <CheckCircle2 className="w-4 h-4 text-rose-500 mt-0.5 shrink-0" />
                           <span>{feat}</span>
@@ -146,7 +146,7 @@ export default function Projects() {
                       {project.tech.map((tc) => (
                         <span
                           key={tc}
-                          className="px-2.5 py-1 text-[10px] font-mono font-semibold bg-slate-100 dark:bg-[#200711] text-slate-700 dark:text-rose-100 rounded-lg border border-slate-200/40 dark:border-rose-500/10"
+                          className="px-2.5 py-1 text-[10px] font-mono font-semibold bg-theme-card text-theme-text rounded-lg border border-theme-border"
                         >
                           {tc}
                         </span>
@@ -171,7 +171,7 @@ export default function Projects() {
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-100 dark:bg-[#1a050d] hover:bg-slate-200 dark:hover:bg-[#2a0916] text-slate-700 dark:text-rose-200 font-sans font-semibold text-xs sm:text-sm border border-slate-200/50 dark:border-rose-500/15 transition-all duration-300"
+                        className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-theme-card hover:bg-theme-bg text-theme-text font-sans font-semibold text-xs sm:text-sm border border-theme-border transition-all duration-300"
                       >
                         Source Code
                         <Github className="w-4 h-4" />

@@ -11,7 +11,7 @@ export function ThemeProvider({ children }) {
       const systemPreference = window.matchMedia(
         "(prefers-color-scheme: dark)",
       ).matches;
-      return systemPreference ? "dark" : "dark"; // Default to dark theme for that premium award-winning developer vibe!
+      return systemPreference ? "dark" : "light";
     }
     return "dark";
   });
@@ -20,9 +20,11 @@ export function ThemeProvider({ children }) {
     const root = window.document.documentElement;
     if (theme === "dark") {
       root.classList.add("dark");
+      root.classList.remove("light");
       root.style.colorScheme = "dark";
     } else {
       root.classList.remove("dark");
+      root.classList.add("light");
       root.style.colorScheme = "light";
     }
     localStorage.setItem("praveen-portfolio-theme", theme);

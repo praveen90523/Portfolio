@@ -14,6 +14,7 @@ import {
   Mail,
 } from "lucide-react";
 import { useTheme } from "./ThemeContext";
+import ThemeToggle from "./ThemeToggle";
 import { personalInfo } from "../data/portfolioData";
 
 const LeetCode = (props) => (
@@ -83,8 +84,8 @@ export default function Navbar() {
       <div
         className={`w-full max-w-5xl rounded-full transition-all duration-500 flex items-center justify-between px-4 sm:px-6 py-2 border ${
           scrolled
-            ? "glass-nav bg-[#14050a]/90 border-rose-500/20 shadow-[0_4px_30px_rgba(244,63,94,0.15)]"
-            : "bg-[#18060c]/40 border-rose-500/10 shadow-[0_4px_20px_rgba(0,0,0,0.2)]"
+            ? "glass-nav border-theme-border dark:border-rose-500/20 shadow-theme-soft dark:shadow-[0_4px_30px_rgba(244,63,94,0.15)]"
+            : "bg-theme-card/40 border-theme-border dark:border-rose-500/10 shadow-sm"
         }`}
       >
         {/* Logo / Brand */}
@@ -96,7 +97,7 @@ export default function Navbar() {
             P
           </div>
           <div className="hidden xs:flex flex-col items-start leading-none">
-            <span className="font-sans font-extrabold text-sm tracking-tight text-white">
+            <span className="font-sans font-extrabold text-sm tracking-tight text-theme-text">
               {personalInfo.name}
             </span>
             <span className="text-[8px] font-mono text-rose-400 font-bold tracking-widest uppercase">
@@ -106,7 +107,7 @@ export default function Navbar() {
         </button>
 
         {/* Center Pill Menu (Desktop) */}
-        <nav className="hidden md:flex items-center gap-1.5 bg-[#100306]/60 px-2 py-1 rounded-full border border-rose-500/10">
+        <nav className="hidden md:flex items-center gap-1.5 bg-theme-bg/60 dark:bg-[#100306]/60 px-2 py-1 rounded-full border border-theme-border dark:border-rose-500/10">
           {navItems.map((item) => {
             const isActive = activeId === item.id;
             const Icon = item.icon;
@@ -117,7 +118,7 @@ export default function Navbar() {
                 className={`relative flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-sans text-xs font-semibold transition-all duration-300 cursor-pointer ${
                   isActive
                     ? "text-white bg-gradient-to-r from-rose-600 to-pink-500 shadow-[0_0_15px_rgba(244,63,94,0.6)] border border-rose-400/30"
-                    : "text-rose-200/70 hover:text-white hover:bg-rose-500/5"
+                    : "text-theme-muted hover:text-theme-text hover:bg-theme-primary/5"
                 }`}
               >
                 <Icon
@@ -137,7 +138,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub Profile"
-            className="p-1.5 rounded-full text-rose-300/80 hover:text-white hover:bg-rose-500/10 transition-colors"
+            className="p-1.5 rounded-full text-theme-muted hover:text-theme-primary hover:bg-theme-primary/10 transition-colors"
           >
             <Github className="w-4 h-4" />
           </a>
@@ -148,7 +149,7 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn Profile"
-            className="p-1.5 rounded-full text-rose-300/80 hover:text-white hover:bg-rose-500/10 transition-colors"
+            className="p-1.5 rounded-full text-theme-muted hover:text-theme-primary hover:bg-theme-primary/10 transition-colors"
           >
             <Linkedin className="w-4 h-4" />
           </a>
@@ -159,65 +160,27 @@ export default function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="LeetCode Profile"
-            className="p-1.5 rounded-full text-rose-300/80 hover:text-white hover:bg-rose-500/10 transition-colors"
+            className="p-1.5 rounded-full text-theme-muted hover:text-theme-primary hover:bg-theme-primary/10 transition-colors"
           >
             <LeetCode className="w-4 h-4" />
           </a>
 
           {/* Separator */}
-          <div className="w-[1px] h-4 bg-rose-500/20" />
+          <div className="w-[1px] h-4 bg-theme-border" />
 
           {/* Theme Toggle Button */}
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-full bg-rose-950/40 hover:bg-rose-900/60 text-rose-200 transition-all duration-200 cursor-pointer border border-rose-500/15"
-            aria-label="Toggle Theme"
-          >
-            <AnimatePresence mode="wait" initial={false}>
-              {theme === "dark" ? (
-                <motion.div
-                  key="sun"
-                  initial={{ y: -6, opacity: 0, rotate: -45 }}
-                  animate={{ y: 0, opacity: 1, rotate: 0 }}
-                  exit={{ y: 6, opacity: 0, rotate: 45 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <Sun className="w-4 h-4 text-rose-400" />
-                </motion.div>
-              ) : (
-                <motion.div
-                  key="moon"
-                  initial={{ y: -6, opacity: 0, rotate: 45 }}
-                  animate={{ y: 0, opacity: 1, rotate: 0 }}
-                  exit={{ y: 6, opacity: 0, rotate: -45 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <Moon className="w-4 h-4 text-rose-600" />
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </button>
+          <ThemeToggle />
         </div>
 
         {/* Mobile Actions Drawer trigger */}
         <div className="flex md:hidden items-center gap-2">
           {/* Theme Toggle Mobile */}
-          <button
-            onClick={toggleTheme}
-            className="p-1.5 rounded-full bg-rose-950/40 text-rose-200 border border-rose-500/15"
-            aria-label="Toggle Theme"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-rose-400" />
-            ) : (
-              <Moon className="w-4 h-4 text-rose-600" />
-            )}
-          </button>
+          <ThemeToggle />
 
           {/* Hamburger Trigger */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-1.5 rounded-full bg-rose-950/40 text-rose-200 border border-rose-500/15"
+            className="p-1.5 rounded-full bg-theme-card/40 text-theme-muted border border-theme-border dark:border-rose-500/15"
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? (
@@ -237,7 +200,7 @@ export default function Navbar() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden absolute top-20 inset-x-4 z-40 p-4 rounded-3xl bg-[#14050a]/95 border border-rose-500/25 shadow-xl backdrop-blur-xl"
+            className="md:hidden absolute top-20 inset-x-4 z-40 p-4 rounded-3xl bg-theme-card/95 border border-theme-border shadow-xl backdrop-blur-xl"
           >
             <div className="space-y-1.5">
               {navItems.map((item) => {
@@ -250,7 +213,7 @@ export default function Navbar() {
                     className={`flex items-center gap-3 w-full text-left px-4 py-3 rounded-2xl text-sm font-semibold transition-all ${
                       isActive
                         ? "bg-gradient-to-r from-rose-600 to-pink-500 text-white shadow-md shadow-rose-500/10"
-                        : "text-rose-200/70 hover:bg-rose-500/5 hover:text-white"
+                        : "text-theme-muted hover:bg-theme-primary/5 hover:text-theme-text"
                     }`}
                   >
                     <Icon className="w-4 h-4 text-rose-400" />
@@ -260,12 +223,12 @@ export default function Navbar() {
               })}
 
               {/* Mobile Socials */}
-              <div className="pt-3 mt-3 border-t border-rose-500/10 flex items-center justify-around">
+              <div className="pt-3 mt-3 border-t border-theme-border flex items-center justify-around">
                 <a
                   href={personalInfo.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-rose-300/80 hover:text-white py-1.5 text-xs font-semibold"
+                  className="flex items-center gap-2 text-theme-muted hover:text-theme-text py-1.5 text-xs font-semibold"
                 >
                   <Github className="w-4 h-4" />
                   <span>GitHub</span>
@@ -274,7 +237,7 @@ export default function Navbar() {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-rose-300/80 hover:text-white py-1.5 text-xs font-semibold"
+                  className="flex items-center gap-2 text-theme-muted hover:text-theme-text py-1.5 text-xs font-semibold"
                 >
                   <Linkedin className="w-4 h-4" />
                   <span>LinkedIn</span>
@@ -283,7 +246,7 @@ export default function Navbar() {
                   href={personalInfo.leetcode}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center gap-2 text-rose-300/80 hover:text-white py-1.5 text-xs font-semibold"
+                  className="flex items-center gap-2 text-theme-muted hover:text-theme-text py-1.5 text-xs font-semibold"
                 >
                   <LeetCode className="w-4 h-4" />
                   <span>LeetCode</span>

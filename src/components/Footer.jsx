@@ -39,9 +39,9 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="relative bg-slate-950 border-t border-slate-900 pt-16 pb-12 text-slate-400">
+    <footer className="relative bg-theme-card border-t border-theme-border pt-16 pb-12 text-theme-muted">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-slate-900 text-left">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12 border-b border-theme-border text-left">
           {/* Logo / Bio description (cols 5) */}
           <div className="md:col-span-5 space-y-4">
             <button
@@ -52,7 +52,7 @@ export default function Footer() {
                 P
               </div>
               <div className="flex flex-col">
-                <span className="font-sans font-extrabold text-base tracking-tight text-white leading-none">
+                <span className="font-sans font-extrabold text-base tracking-tight text-theme-text leading-none">
                   {personalInfo.fullName}
                 </span>
                 <span className="text-[9px] font-mono text-rose-400 font-bold tracking-widest uppercase">
@@ -61,7 +61,7 @@ export default function Footer() {
               </div>
             </button>
 
-            <p className="text-xs sm:text-sm text-slate-400 max-w-sm leading-relaxed">
+            <p className="text-xs sm:text-sm text-theme-muted max-w-sm leading-relaxed">
               Award-winning full stack developer specialized in creating modern,
               ultra-responsive MERN systems. Grounded on pure clean code, secure
               routes, and pixel-precise interfaces.
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Quick links navigation (cols 3) */}
           <div className="md:col-span-3 space-y-4">
-            <h4 className="text-xs font-mono font-bold tracking-wider text-slate-200 uppercase">
+            <h4 className="text-xs font-mono font-bold tracking-wider text-theme-text uppercase">
               Page Sections
             </h4>
             <div className="grid grid-cols-2 gap-2 text-xs">
@@ -87,7 +87,7 @@ export default function Footer() {
                 <button
                   key={item.id}
                   onClick={() => handleLinkScroll(item.id)}
-                  className="text-left hover:text-rose-400 transition-colors py-1 cursor-pointer"
+                  className="text-left hover:text-theme-primary transition-colors py-1 cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -97,10 +97,10 @@ export default function Footer() {
 
           {/* Core Credentials info (cols 4) */}
           <div className="md:col-span-4 space-y-4">
-            <h4 className="text-xs font-mono font-bold tracking-wider text-slate-200 uppercase">
+            <h4 className="text-xs font-mono font-bold tracking-wider text-theme-text uppercase">
               Current Base Office
             </h4>
-            <div className="text-xs sm:text-sm text-slate-400 space-y-2">
+            <div className="text-xs sm:text-sm text-theme-muted space-y-2">
               <p>{personalInfo.location}</p>
               <p className="font-sans text-xs text-rose-400 font-bold hover:underline">
                 <a href={`mailto:${personalInfo.email}`}>
@@ -123,7 +123,7 @@ export default function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noreferrer"
-                    className="w-9 h-9 rounded-lg bg-slate-900 border border-slate-800 hover:border-rose-500/40 hover:text-white hover:bg-rose-600 flex items-center justify-center transition-all duration-300"
+                    className="w-9 h-9 rounded-lg bg-theme-bg border border-theme-border hover:border-theme-primary/40 hover:text-white hover:bg-rose-600 flex items-center justify-center transition-all duration-300"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -138,7 +138,7 @@ export default function Footer() {
           <div>
             &copy; {currentYear} {personalInfo.fullName}. All Rights Reserved.
           </div>
-          <div className="flex items-center gap-2.5 text-slate-500">
+          <div className="flex items-center gap-2.5 text-theme-muted">
             <Code className="w-4 h-4 text-rose-500" />
             <span>Built with pure React, Tailwind v4 and Motion</span>
           </div>

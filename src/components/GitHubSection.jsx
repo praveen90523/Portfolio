@@ -80,7 +80,7 @@ export default function GitHubSection() {
   return (
     <section
       id="github"
-      className="relative py-20 sm:py-28 overflow-hidden border-t border-slate-200/40 dark:border-slate-800/20"
+      className="relative py-20 sm:py-28 overflow-hidden border-t border-theme-border"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Title */}
@@ -94,13 +94,13 @@ export default function GitHubSection() {
             <Github className="w-3.5 h-3.5 text-rose-500" /> Source metrics
           </motion.div>
 
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-theme-text tracking-tight">
             GitHub{" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-rose-400 via-rose-500 to-pink-500 font-extrabold">
               Contributions
             </span>
           </h2>
-          <p className="text-xs sm:text-sm font-mono text-slate-400 dark:text-slate-500 mt-2 uppercase tracking-widest">
+          <p className="text-xs sm:text-sm font-mono text-theme-muted mt-2 uppercase tracking-widest">
             Auditing dynamic development commits, languages, and star statistics
           </p>
           <div className="w-16 h-1 bg-rose-500 rounded-full mt-3" />
@@ -122,16 +122,16 @@ export default function GitHubSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: sIdx * 0.05 }}
-                className="p-5 rounded-2xl glass-panel border border-slate-200/50 dark:border-rose-500/10 flex items-center gap-4 hover:border-rose-500/25 transition-all shadow-sm"
+                className="p-5 rounded-2xl glass-panel border border-theme-border flex items-center gap-4 hover:border-rose-500/25 transition-all shadow-sm"
               >
                 <div className="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center border border-rose-500/20 shrink-0">
                   <Icon className="w-5 h-5" />
                 </div>
                 <div>
-                  <div className="text-[10px] font-mono text-slate-400 dark:text-rose-300/40 uppercase tracking-widest leading-none">
+                  <div className="text-[10px] font-mono text-theme-muted uppercase tracking-widest leading-none">
                     {stat.label}
                   </div>
-                  <div className="text-2xl font-sans font-black text-slate-950 dark:text-white mt-1 leading-none">
+                  <div className="text-2xl font-sans font-black text-theme-text mt-1 leading-none">
                     {stat.val}
                   </div>
                 </div>
@@ -145,16 +145,16 @@ export default function GitHubSection() {
           {/* Left Column: Contribution Grid (cols 8) */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-8 p-6 rounded-2xl glass-panel border border-slate-200/50 dark:border-rose-500/15 text-left shadow-lg"
+            className="lg:col-span-8 p-6 rounded-2xl glass-panel border border-theme-border text-left shadow-lg"
           >
             <div className="flex items-center justify-between mb-4 flex-wrap gap-2">
-              <h3 className="font-sans font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2">
+              <h3 className="font-sans font-extrabold text-base sm:text-lg text-theme-text flex items-center gap-2">
                 <Calendar className="w-5 h-5 text-rose-500" /> Contribution
                 Heatmap
               </h3>
-              <div className="flex items-center gap-1.5 text-xs font-mono text-slate-400">
+              <div className="flex items-center gap-1.5 text-xs font-mono text-theme-muted">
                 <span>1,248 commits</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                 <span>Last 6 Months</span>
@@ -169,7 +169,7 @@ export default function GitHubSection() {
                     {week.map((level, dIdx) => {
                       // Map level to slate/rose colors
                       let bgClass =
-                        "bg-slate-200 dark:bg-[#1a050d] border border-rose-500/5"; // level 0
+                        "bg-slate-200 dark:bg-theme-card border border-theme-border"; // level 0
                       if (level === 1) bgClass = "bg-rose-500/20";
                       if (level === 2) bgClass = "bg-rose-500/40";
                       if (level === 3) bgClass = "bg-rose-500/70";
@@ -201,10 +201,10 @@ export default function GitHubSection() {
             </div>
 
             {/* Heatmap Legend */}
-            <div className="flex items-center justify-between mt-2 pt-2 border-t border-slate-200/40 dark:border-rose-500/10 text-[10px] font-mono text-slate-400">
+            <div className="flex items-center justify-between mt-2 pt-2 border-t border-theme-border text-[10px] font-mono text-theme-muted">
               <div className="flex items-center gap-1">
                 <span>Less</span>
-                <div className="w-[11px] h-[11px] rounded-[2px] bg-slate-200 dark:bg-[#15040a]" />
+                <div className="w-[11px] h-[11px] rounded-[2px] bg-slate-200 dark:bg-theme-card" />
                 <div className="w-[11px] h-[11px] rounded-[2px] bg-rose-500/20" />
                 <div className="w-[11px] h-[11px] rounded-[2px] bg-rose-500/40" />
                 <div className="w-[11px] h-[11px] rounded-[2px] bg-rose-500/70" />
@@ -222,24 +222,24 @@ export default function GitHubSection() {
 
             {/* Project List Inside GitHub Block */}
             <div className="mt-8">
-              <h4 className="text-xs font-mono font-bold text-slate-400 dark:text-rose-300/40 uppercase tracking-widest mb-4">
+              <h4 className="text-xs font-mono font-bold text-theme-muted uppercase tracking-widest mb-4">
                 Popular Repositories
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {repos.map((rp, rIdx) => (
                   <div
                     key={rIdx}
-                    className="p-4 rounded-xl border border-slate-200/60 dark:border-rose-500/10 bg-slate-900/10 dark:bg-[#1c050d]/40 flex flex-col justify-between group hover:border-rose-500/20 transition-colors duration-300"
+                    className="p-4 rounded-xl border border-theme-border bg-theme-card flex flex-col justify-between group hover:border-theme-primary/20 transition-colors duration-300"
                   >
                     <div>
-                      <span className="font-sans font-extrabold text-sm text-slate-900 dark:text-white group-hover:text-rose-400 transition-colors">
+                      <span className="font-sans font-extrabold text-sm text-theme-text group-hover:text-rose-400 transition-colors">
                         {rp.name}
                       </span>
-                      <p className="text-[11px] text-slate-600 dark:text-rose-100/70 mt-2 line-clamp-2">
+                      <p className="text-[11px] text-theme-muted mt-2 line-clamp-2">
                         {rp.desc}
                       </p>
                     </div>
-                    <div className="flex items-center justify-between text-[10px] font-mono mt-4 text-slate-400">
+                    <div className="flex items-center justify-between text-[10px] font-mono mt-4 text-theme-muted">
                       <span className="flex items-center gap-1">
                         <span className="w-2 h-2 rounded-full bg-rose-500" />{" "}
                         {rp.lang}
@@ -258,11 +258,11 @@ export default function GitHubSection() {
           {/* Right Column: Top Languages pie/progress representations (cols 4) */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="lg:col-span-4 p-6 rounded-2xl glass-panel border border-slate-200/50 dark:border-rose-500/15 text-left shadow-lg h-full"
+            className="lg:col-span-4 p-6 rounded-2xl glass-panel border border-theme-border text-left shadow-lg h-full"
           >
-            <h3 className="font-sans font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2 mb-6">
+            <h3 className="font-sans font-extrabold text-base sm:text-lg text-theme-text flex items-center gap-2 mb-6">
               <Terminal className="w-5 h-5 text-rose-500" /> Top Languages
             </h3>
 
@@ -274,7 +274,7 @@ export default function GitHubSection() {
                   cx="64"
                   cy="64"
                   r="50"
-                  stroke="#0f172a"
+                  stroke="var(--theme-border)"
                   strokeWidth="12"
                   fill="transparent"
                 />
@@ -329,7 +329,7 @@ export default function GitHubSection() {
               </svg>
 
               {/* Central brand symbol */}
-              <div className="absolute inset-0 flex items-center justify-center font-sans font-extrabold text-sm text-slate-900 dark:text-white pointer-events-none">
+              <div className="absolute inset-0 flex items-center justify-center font-sans font-extrabold text-sm text-theme-text pointer-events-none">
                 MERN
               </div>
             </div>
@@ -339,18 +339,18 @@ export default function GitHubSection() {
               {topLanguages.map((lang, lIdx) => (
                 <div key={lIdx} className="space-y-1">
                   <div className="flex items-center justify-between text-xs font-mono">
-                    <span className="flex items-center gap-1.5 text-slate-800 dark:text-slate-200">
+                    <span className="flex items-center gap-1.5 text-theme-text">
                       <span
                         className="w-2.5 h-2.5 rounded-full"
                         style={{ backgroundColor: lang.color }}
                       />
                       {lang.name}
                     </span>
-                    <span className="text-slate-400 dark:text-slate-500 font-bold">
+                    <span className="text-theme-muted font-bold">
                       {lang.percentage}%
                     </span>
                   </div>
-                  <div className="w-full h-1.5 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
+                  <div className="w-full h-1.5 bg-slate-200 dark:bg-theme-bg rounded-full overflow-hidden">
                     <div
                       className="h-full rounded-full"
                       style={{
@@ -364,7 +364,7 @@ export default function GitHubSection() {
             </div>
 
             {/* Footer card metrics details */}
-            <div className="mt-8 p-3 bg-slate-900/10 dark:bg-slate-900/30 rounded-xl border border-slate-200/40 dark:border-rose-500/10 text-xs text-slate-600 dark:text-rose-300/60 text-center">
+            <div className="mt-8 p-3 bg-theme-bg rounded-xl border border-theme-border text-xs text-theme-muted text-center">
               "Total Git commits verified this year:{" "}
               <span className="text-rose-400 font-extrabold">1,248</span> across
               multiple production systems."
